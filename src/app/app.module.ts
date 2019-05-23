@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
+import { ExampleComponent } from './example/example.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,11 +22,13 @@ import { HeaderComponent } from './header/header.component';
     FooterComponent,
     NavbarComponent,
     HeaderComponent,
+    ExampleComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [HttpMoviesService],
   bootstrap: [AppComponent]
