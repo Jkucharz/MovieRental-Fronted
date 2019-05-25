@@ -1,6 +1,6 @@
  #logo{
     background-color: black;
-    padding: 60px;
+    padding: 10px;
     
   }
   
@@ -8,6 +8,7 @@
     text-align: center;
     color: orange;
     font-family: cursive;
+    padding-top: 40px ;
   }
 
  

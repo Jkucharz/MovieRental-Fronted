@@ -14,6 +14,8 @@ import { AdminComponent } from './admin/admin.component';
 import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
 import { ExampleComponent } from './example/example.component';
 import { FormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
+import { NavbaruserComponent } from './navbaruser/navbaruser.component';
 
 
 
@@ -28,6 +30,8 @@ import { FormsModule } from '@angular/forms';
     AdminComponent,
     NavbaradminComponent,
     ExampleComponent,
+    UserComponent,
+    NavbaruserComponent,
 
   ],
   imports: [

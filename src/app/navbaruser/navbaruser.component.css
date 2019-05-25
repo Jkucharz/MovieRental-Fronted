@@ -1,0 +1,31 @@
+ul {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 50px;
+    overflow: visible;
+    background-color: black;
+   
+  }
+  
+  li {
+    float: left;
+    padding-left: 5px;
+  }
+  
+  li a {
+    color: black;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5em;
+    border-color: black;
+    background-color: orange;
+  }
+  
+  li a:hover {
+    background-color: rgb(70, 70, 70);
+    color: orange;
+  }
+  
+ 
+  

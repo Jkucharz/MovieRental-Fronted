@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -28,6 +29,10 @@ const appRoutes: Routes = [
     path: 'admin',
     redirectTo: '/admin',
     pathMatch: 'full'
+  },
+  {
+    path: 'user',
+    component: UserComponent
   },
 
 ];
