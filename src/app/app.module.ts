@@ -16,6 +16,8 @@ import { ExampleComponent } from './example/example.component';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { NavbaruserComponent } from './navbaruser/navbaruser.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -32,6 +34,8 @@ import { NavbaruserComponent } from './navbaruser/navbaruser.component';
     ExampleComponent,
     UserComponent,
     NavbaruserComponent,
+    LoginComponent,
+    SignupComponent,
 
   ],
   imports: [
