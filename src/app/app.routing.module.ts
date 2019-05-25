@@ -1,5 +1,6 @@
+import { ExampleComponent } from './example/example.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 
@@ -15,7 +16,10 @@ const appRoutes: Routes = [
     path: 'home',
     component: HomeComponent
   },
-
+    {
+    path: 'example',
+    component: ExampleComponent
+  },
   {
     path: 'admin',
     component: AdminComponent

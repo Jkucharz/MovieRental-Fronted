@@ -12,8 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminComponent } from './admin/admin.component';
 import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
-
-
+import { ExampleComponent } from './example/example.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -27,14 +27,14 @@ import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
     HeaderComponent,
     AdminComponent,
     NavbaradminComponent,
-    
-   
-    
+    ExampleComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [HttpMoviesService],
   bootstrap: [AppComponent]

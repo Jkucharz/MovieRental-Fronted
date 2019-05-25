@@ -1,0 +1,23 @@
+<h1>Przykład data Binding</h1>
+
+<div>
+  <input [value]="inputText">
+</div>
+
+<div>
+  <input [(ngModel)]="inputText2Way">
+  {{inputText2Way}}
+</div>
+
+<div>
+  <input (click)="jakosInaczej()">
+  <button [disabled]="button">Dodaj</button>
+  {{showClick}}
+</div>
+
+<div *ngIf="userLogin" >
+  <h1>Zalogowany użytkownik</h1>
+</div>
+<div *ngIf="userLogin==false">
+  <h1>NIE Zalogowany użytkownik</h1>
+</div>
