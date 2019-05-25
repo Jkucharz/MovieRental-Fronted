@@ -10,6 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
+import { AdminComponent } from './admin/admin.component';
+import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
+
+
+
 
 
 @NgModule({
@@ -20,6 +25,11 @@ import { HeaderComponent } from './header/header.component';
     FooterComponent,
     NavbarComponent,
     HeaderComponent,
+    AdminComponent,
+    NavbaradminComponent,
+    
+   
+    
   ],
   imports: [
     BrowserModule,
