@@ -2,6 +2,39 @@ table {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
-  text-align: center;
-  margin-top: 5px;
+  float: left;
+ 
+
 }
+th{
+  float: left;
+  padding: 0px; 
+  
+}
+h2{
+  padding: 50px 20px 0px 20px;
+}
+
+h3{
+  float:right;
+padding: 20px;
+}
+
+span{
+  color:orange; 
+}
+
+button{
+
+
+}
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33,3%;
+  padding: 0px;
+}
+

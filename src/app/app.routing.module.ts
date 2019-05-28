@@ -25,11 +25,7 @@ const appRoutes: Routes = [
     path: 'admin',
     component: AdminComponent
   },
-  {
-    path: 'admin',
-    redirectTo: '/admin',
-    pathMatch: 'full'
-  },
+
   {
     path: 'user',
     component: UserComponent

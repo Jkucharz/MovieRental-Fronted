@@ -23,6 +23,13 @@ export class MoviesComponent implements OnInit {
     });
   }
 
+  button = true;
+  showClick = '';
+  opis(){
+    this.button = false;
+  }
+
+
 }
 
 export interface Movie{
