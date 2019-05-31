@@ -18,6 +18,7 @@ import { UserComponent } from './user/user.component';
 import { NavbaruserComponent } from './navbaruser/navbaruser.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthService } from './service/auth.service';
 
 
 
@@ -36,9 +37,7 @@ import { SignupComponent } from './signup/signup.component';
     UserComponent,
     NavbaruserComponent,
     LoginComponent,
-    SignupComponent,
-  
-
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +45,7 @@ import { SignupComponent } from './signup/signup.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [HttpMoviesService],
+  providers: [HttpMoviesService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

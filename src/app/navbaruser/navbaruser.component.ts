@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-navbaruser',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbaruserComponent implements OnInit {
 
-  constructor() { }
+  value=0;
+  loggedAs;
 
-  ngOnInit() {
-  }
+  constructor(private authService :AuthService) {}
+   
+  ngOnInit(){
+    this.subcribeVariable();
+   }
+
+   private subcribeVariable(){
+     this.authService.setUserName();
+    this.authService.getLoggedAs().subscribe(value=>{
+      this.loggedAs = value;
+    });
+   }
 
 }

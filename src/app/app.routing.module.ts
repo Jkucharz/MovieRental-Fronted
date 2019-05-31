@@ -25,12 +25,6 @@ const appRoutes: Routes = [
     path: 'admin',
     component: AdminComponent
   },
-
-  {
-    path: 'user',
-    component: UserComponent
-  },
-
 ];
 
 @NgModule({
