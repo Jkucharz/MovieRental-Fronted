@@ -50,7 +50,7 @@ export class AuthService {
 
   logout() {
     localStorage.clear();
-    this.setUserName;
+    this.setUserName();
   }
 
   getLogged(): Observable<boolean>{

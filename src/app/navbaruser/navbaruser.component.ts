@@ -17,6 +17,10 @@ export class NavbaruserComponent implements OnInit {
     this.subcribeVariable();
    }
 
+   logout(){
+    this.authService.logout();
+   }
+
    private subcribeVariable(){
      this.authService.setUserName();
     this.authService.getLoggedAs().subscribe(value=>{
