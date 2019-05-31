@@ -49,6 +49,9 @@ export class AuthService {
   }
 
   logout() {
+    let headers = new HttpHeaders().set( 'Authorization', 'Basic '+btoa("my-trusted-client:secret"));
+    this.http.get('http://localhost:8080/logouts?access_token='+localStorage.getItem('token'),{headers: headers},).subscribe(get => {
+     });
     localStorage.clear();
     this.setUserName();
   }
