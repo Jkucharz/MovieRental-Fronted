@@ -9,8 +9,8 @@ import { Observable, Subject } from 'rxjs';
 
 export class AuthService {
 
-  logged = new  Subject<boolean>();
-  loggedError:boolean = false;
+  logged = new Subject<boolean>();
+  loggedError = new Subject<string>();
   loggedAs = new  Subject<string>();
 
   constructor(private http: HttpClient) { 
@@ -26,7 +26,7 @@ export class AuthService {
       this.setUserName();
     },
     error=>{
-     console.log("blad");
+     this.loggedError.next('Niepoprawne dane logowania');
     });
   }
 
@@ -58,6 +58,10 @@ export class AuthService {
 
   getLogged(): Observable<boolean>{
     return this.logged.asObservable();
+  }
+
+  getLoggedError(): Observable<string>{
+    return this.loggedError.asObservable();
   }
 
   getLoggedAs(): Observable<string>{
