@@ -10,6 +10,7 @@ export class NavbaruserComponent implements OnInit {
 
   value=0;
   loggedAs;
+  loggedAdmin;
 
   constructor(private authService :AuthService) {}
    
@@ -23,9 +24,12 @@ export class NavbaruserComponent implements OnInit {
 
    private subcribeVariable(){
      this.authService.setUserName();
-    this.authService.getLoggedAs().subscribe(value=>{
-      this.loggedAs = value;
-    });
+      this.authService.getLoggedAs().subscribe(value=>{
+        this.loggedAs = value;
+      });
+      this.authService.getLoggedAdmin().subscribe(value=>{
+        this.loggedAdmin = value;
+      });
    }
 
 }

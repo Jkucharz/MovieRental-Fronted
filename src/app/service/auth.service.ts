@@ -12,6 +12,7 @@ export class AuthService {
   logged = new Subject<boolean>();
   loggedError = new Subject<string>();
   loggedAs = new  Subject<string>();
+  loggedAdmin = new Subject<boolean>();
 
   constructor(private http: HttpClient) { 
     this.setUserName();
@@ -19,7 +20,6 @@ export class AuthService {
 
   login(user: string, password: string) {
     let headers = new HttpHeaders().set( 'Authorization', 'Basic '+btoa("my-trusted-client:secret"));
-
     this.http.post<Token>('http://localhost:8080/oauth/token?grant_type=password&username='+user+'&password='+password,{}, { headers: headers }).subscribe(post => {
       localStorage.clear();
       localStorage.setItem('token',post.access_token);
@@ -33,8 +33,11 @@ export class AuthService {
    setUserName(){
       let headers = new HttpHeaders().set( 'Authorization', 'bearer  '+localStorage.getItem('token'));
       this.http.get('http://localhost:8080/getUsername', { headers: headers, responseType: 'text'},).subscribe(get => {
-        this.logged.next(true);
+      this.logged.next(true);
       this.loggedAs.next(get);
+      this.getLoggedAs().subscribe(value=>{
+        this.checkIfAdmin(value);
+      });
     },
       error=>{
         this.logged.next(false);
@@ -42,6 +45,13 @@ export class AuthService {
         localStorage.clear();
       }
     );
+  }
+
+  checkIfAdmin(name:string){
+    let headers = new HttpHeaders().set( 'Content-Type', 'application/json');
+    this.http.post<boolean>('http://localhost:8080/checkUserAdmin',{'name':name},{ headers: headers}).subscribe(get => {
+    this.loggedAdmin.next(get);
+     });
   }
 
   register() {
@@ -67,6 +77,10 @@ export class AuthService {
   getLoggedAs(): Observable<string>{
     return this.loggedAs.asObservable();
   }
+
+  getLoggedAdmin(): Observable<boolean>{
+    return this.loggedAdmin.asObservable();
+  }
 }
 
 export interface Token{
@@ -75,5 +89,3 @@ export interface Token{
   expires_in: number;
   scope: string;
 }
-
-
