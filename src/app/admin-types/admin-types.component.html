@@ -1,0 +1,9 @@
+<app-header></app-header>
+<app-navbaradmin></app-navbaradmin>
+
+<div *ngIf="loggedAdmin">
+  <div *ngFor="let type of types">
+    <p>Gatunek: {{type.name}}</p>
+    <br>
+  </div>
+</div>

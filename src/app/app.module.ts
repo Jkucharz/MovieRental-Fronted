@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthService } from './service/auth.service';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminTypesComponent } from './admin-types/admin-types.component';
 
 
 
@@ -39,7 +40,8 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
     NavbaruserComponent,
     LoginComponent,
     SignupComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    AdminTypesComponent
   ],
   imports: [
     BrowserModule,

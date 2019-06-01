@@ -1,3 +1,4 @@
+import { AdminTypesComponent } from './admin-types/admin-types.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { ExampleComponent } from './example/example.component';
 import { NgModule } from '@angular/core';
@@ -29,6 +30,10 @@ const appRoutes: Routes = [
   {
     path: 'admin/users',
     component: AdminUsersComponent
+  },
+  {
+    path: 'admin/types',
+    component: AdminTypesComponent
   },
   {
     path: '**',
