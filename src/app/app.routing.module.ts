@@ -1,3 +1,4 @@
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { ExampleComponent } from './example/example.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -25,6 +26,15 @@ const appRoutes: Routes = [
     path: 'admin',
     component: AdminComponent
   },
+  {
+    path: 'admin/users',
+    component: AdminUsersComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

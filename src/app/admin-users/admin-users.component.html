@@ -1,0 +1,15 @@
+<app-header></app-header>
+<app-navbaradmin></app-navbaradmin>
+
+<div *ngIf="loggedAdmin">
+  <div *ngFor="let user of users">
+    <p>ID: {{user.id}}</p>
+    <p>UserName: {{user.userName}}</p>
+    <p>Email: {{user.email}}</p>
+    <div *ngFor="let role of user.roles">
+      <p>Role ID: {{role.id}}</p>
+      <p>Role Name: {{role.name}}</p>
+    </div>
+    <br>
+  </div>
+</div>
