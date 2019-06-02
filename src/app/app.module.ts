@@ -21,6 +21,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthService } from './service/auth.service';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminTypesComponent } from './admin-types/admin-types.component';
+import { AdminMoviesComponent } from './admin-movies/admin-movies.component';
 
 
 
@@ -41,7 +42,8 @@ import { AdminTypesComponent } from './admin-types/admin-types.component';
     LoginComponent,
     SignupComponent,
     AdminUsersComponent,
-    AdminTypesComponent
+    AdminTypesComponent,
+    AdminMoviesComponent
   ],
   imports: [
     BrowserModule,

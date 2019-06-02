@@ -1,0 +1,18 @@
+<app-header></app-header>
+<app-navbaradmin></app-navbaradmin>
+
+<div *ngIf="loggedAdmin">
+  <div *ngFor="let movie of movies">
+    <p>Id: {{movie.id}}</p>
+    <p>Tytuł: {{movie.title}}</p>
+      <div *ngFor="let type of movie.types">
+        <p>Typ: {{type.name}}</p>
+      </div>
+    <p>Reżyser: {{movie.director}}</p>
+    <p>Rok produkcji: {{movie.productionYear}}</p>
+    <p>Opis: {{movie.description}}</p>
+    <p>Ilość Wypożyczeń: {{movie.borrowsQuantity}}</p>
+    <p>Ocena: {{movie.rate}}</p>
+    <br>
+  </div>
+</div>

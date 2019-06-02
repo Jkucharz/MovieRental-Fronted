@@ -1,3 +1,4 @@
+import { AdminMoviesComponent } from './admin-movies/admin-movies.component';
 import { AdminTypesComponent } from './admin-types/admin-types.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { ExampleComponent } from './example/example.component';
@@ -34,6 +35,10 @@ const appRoutes: Routes = [
   {
     path: 'admin/types',
     component: AdminTypesComponent
+  },
+  {
+    path: 'admin/movies',
+    component: AdminMoviesComponent
   },
   {
     path: '**',

@@ -28,17 +28,4 @@ export class MoviesComponent implements OnInit {
   opis(){
     this.button = false;
   }
-
-
-}
-
-export interface Movie{
-  id?: number;
-  name?: string;
-  type?: string;
-  director?: string;
-  productionYear?: string;
-  description?: string;
-  borrowsQuantity?: number;
-  rate?: number;
 }

@@ -29,7 +29,4 @@ export class AdminUsersComponent implements OnInit {
        this.loggedAdmin = value;
      });
   }
-
-
-
 }
