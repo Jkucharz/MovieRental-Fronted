@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
+import { RentalsComponent } from './rentals/rentals.component';
 
 
 
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
     {
     path: 'example',
     component: ExampleComponent
+  },
+  {
+    path: 'rentals',
+    component: RentalsComponent
   },
   {
     path: 'admin',
