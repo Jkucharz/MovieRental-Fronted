@@ -10,6 +10,8 @@ import { AuthService } from '../service/auth.service';
 export class AdminTypesComponent implements OnInit {
   loggedAdmin;
   types;
+  typeName;
+  addTypeError='';
 
   constructor(private authService: AuthService, private typeService: TypeService) { }
 
@@ -22,6 +24,15 @@ export class AdminTypesComponent implements OnInit {
     this.typeService.getAllTypes().subscribe(value=>{
       this.types = value;
     });
+  }
+
+  addMovieType(){
+    if(this.typeName==undefined){
+      this.addTypeError='Podaj nazwe gatunku';
+    }else{
+      this.addTypeError='';
+      this.typeService.addMovieType(this.typeName);
+    }
   }
 
   removeMovieType(typeName: string){

@@ -2,6 +2,14 @@
 <app-navbaradmin></app-navbaradmin>
 
 <div *ngIf="loggedAdmin">
+    <br>
+  <div>
+      <input  [(ngModel)]="typeName" type="text" placeholder="Podaj nazwe gatunku" name="uname">
+      <button type="button" (click)="addMovieType()">Dodaj gatunek</button>
+      <p>{{addTypeError}}</p>
+  </div>
+  <br>
+
   <div *ngFor="let type of types">
     <p>Gatunek: {{type.name}}</p>
     <button type="button" (click)="removeMovieType(type.name)">Usuń gatunek</button>
