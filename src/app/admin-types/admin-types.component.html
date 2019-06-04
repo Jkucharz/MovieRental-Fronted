@@ -4,6 +4,8 @@
 <div *ngIf="loggedAdmin">
   <div *ngFor="let type of types">
     <p>Gatunek: {{type.name}}</p>
+    <button type="button" (click)="removeMovieType(type.name)">Usuń gatunek</button>
+    <br>
     <br>
   </div>
 </div>

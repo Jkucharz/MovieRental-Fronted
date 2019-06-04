@@ -24,6 +24,10 @@ export class AdminTypesComponent implements OnInit {
     });
   }
 
+  removeMovieType(typeName: string){
+    this.typeService.deleteMovieType(typeName);
+  }
+
   private subcribeVariable(){
     this.authService.setUserName();
      this.authService.getLoggedAdmin().subscribe(value=>{
