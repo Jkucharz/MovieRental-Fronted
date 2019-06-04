@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Register } from './auth.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -16,7 +17,7 @@ export class AuthService {
   loggedAdmin = new Subject<boolean>();
   registerError = new Subject<string>();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.setUserName();
   }
 
@@ -79,7 +80,7 @@ export class AuthService {
     });
     localStorage.clear();
     this.setUserName();
-    
+    this.router.navigateByUrl('/home');
   }
 
   getLogged(): Observable<boolean> {

@@ -1,14 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<Array<User>> {
     let headers = new HttpHeaders().set('Authorization', 'bearer  ' + localStorage.getItem('token'));
@@ -26,7 +25,7 @@ export class UserService {
       ]
     });
     this.http.post<ChangeRole>('http://localhost:8080/admin/user/setRole', changeRole, { headers: headers }).subscribe(post => {
-      window.location.reload(); 
+      window.location.reload();  
     });
   }
 }
