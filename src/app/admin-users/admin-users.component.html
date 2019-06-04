@@ -9,7 +9,10 @@
     <div *ngFor="let role of user.roles">
       <p>Role ID: {{role.id}}</p>
       <p>Role Name: {{role.name}}</p>
+      <button type="button" (click)="changePermissions(user.userName, role.name)"><div *ngIf="role.name==='admin'">Usuń uprawnienia administratora</div><div *ngIf="role.name==='user'">Dodaj uprawnienia administratora</div></button>
     </div>
+   
+    <br>
     <br>
   </div>
 </div>

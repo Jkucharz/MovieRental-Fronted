@@ -17,11 +17,11 @@ export class RentalsComponent implements OnInit {
 
   ngOnInit() {
     this.subcribeVariable();
-    this.getAllRentals();
+    this.getUserRentals();
   }
 
-  getAllRentals(){
-    this.rentalService.getAllRentals().subscribe(value=>{
+  getUserRentals(){
+    this.rentalService.getUserRentals().subscribe(value=>{
       this.rentals = value;
     },
     error => {

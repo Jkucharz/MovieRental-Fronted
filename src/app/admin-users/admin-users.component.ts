@@ -10,11 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class AdminUsersComponent implements OnInit {
   loggedAdmin;
   users;
-  constructor(private authService: AuthService, private userService: UserService) { }
+
+  constructor(private authService: AuthService, private userService: UserService) { 
+  }
 
   ngOnInit() {
     this.subcribeVariable();
     this.getAllUsers();
+  }
+
+  changePermissions(userName: string,currentRole: string){
+    if(currentRole=='admin'){
+      this.userService.changePermission(userName,'user');
+    }else{
+      this.userService.changePermission(userName,'admin');
+    }
   }
 
   getAllUsers(){
