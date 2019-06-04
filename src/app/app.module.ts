@@ -23,6 +23,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminTypesComponent } from './admin-types/admin-types.component';
 import { AdminMoviesComponent } from './admin-movies/admin-movies.component';
 import { RentalsComponent } from './rentals/rentals.component';
+import { AdminRentalsComponent } from './admin-rentals/admin-rentals.component';
 
 
 
@@ -45,7 +46,8 @@ import { RentalsComponent } from './rentals/rentals.component';
     AdminUsersComponent,
     AdminTypesComponent,
     AdminMoviesComponent,
-    RentalsComponent
+    RentalsComponent,
+    AdminRentalsComponent
   ],
   imports: [
     BrowserModule,

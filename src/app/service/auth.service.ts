@@ -79,6 +79,7 @@ export class AuthService {
     });
     localStorage.clear();
     this.setUserName();
+    
   }
 
   getLogged(): Observable<boolean> {

@@ -10,9 +10,14 @@ export class RentalService {
 
   constructor(private http: HttpClient) { }
 
-  getAllRentals(): Observable<Array<Rental>> {
+  getUserRentals(): Observable<Array<Rental>> {
     let headers = new HttpHeaders().set('Authorization', 'bearer  ' + localStorage.getItem('token'));
     return this.http.get<Array<Rental>>('http://localhost:8080/rental',{headers: headers});
+  }
+
+  getAllRentals(): Observable<Array<Rental>> {
+    let headers = new HttpHeaders().set('Authorization', 'bearer  ' + localStorage.getItem('token'));
+    return this.http.get<Array<Rental>>('http://localhost:8080/admin/rental',{headers: headers});
   }
 }
 
