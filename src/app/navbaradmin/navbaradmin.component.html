@@ -5,6 +5,15 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <div>
+
+    <div *ngIf="!loggedAdmin">
+        <li><a href="/" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home"></span> Strona Główna</a></li>
+        
+        <h1>
+          <p>Brak wystarczających uprawnień</p>
+          <p>Przejdź na stronę główną, zaloguj się i spróbuj jeszcze raz.</p>
+        </h1>
+        </div>
    
 <ul *ngIf="loggedAdmin">
   <li><a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home"></span> <-- Wyjście z panelu administratora</a></li>
@@ -19,12 +28,6 @@
 
 </ul>
 
-<div *ngIf="!loggedAdmin">
-<h1>
-  <p style="text-align: center">Brak wystarczających uprawnień</p>
-  <p style="text-align: center">Przejdź na stronę główną, zaloguj się i spróbuj jeszcze raz.</p>
-</h1>
-  <li ><a href="/" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home"></span> Strona Główna</a></li>
-</div>
+
 
 </div>

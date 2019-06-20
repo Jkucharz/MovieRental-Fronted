@@ -1,6 +1,7 @@
 <app-header></app-header>
 <app-navbaradmin></app-navbaradmin>
 
+
 <div *ngIf="loggedAdmin">
   <div *ngFor="let rental of rentals">
     <p>Data wypożyczenia: {{rental.rentalTime}}</p>

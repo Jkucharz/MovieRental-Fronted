@@ -1,18 +1,39 @@
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
 <app-header></app-header>
 <app-navbaradmin></app-navbaradmin>
 
+<div id="users">
+
+  <h1>Lista użytkowników</h1>
+  <br>
+
+ 
 <div *ngIf="loggedAdmin">
   <div *ngFor="let user of users">
-    <p>ID: {{user.id}}</p>
-    <p>UserName: {{user.userName}}</p>
-    <p>Email: {{user.email}}</p>
     <div *ngFor="let role of user.roles">
-      <p>Role ID: {{role.id}}</p>
-      <p>Role Name: {{role.name}}</p>
-      <button type="button" (click)="changePermissions(user.userName, role.name)"><div *ngIf="role.name==='admin'">Usuń uprawnienia administratora</div><div *ngIf="role.name==='user'">Dodaj uprawnienia administratora</div></button>
+        <div id="user"> 
+      <p>ID: {{user.id}}</p>
+      <p>Name: {{user.userName}}</p>
+      <p>E-mail: {{user.email}}</p>
+      <p>Role ID: {{role.id}} || {{role.name}}</p>  
+      <button class="button" (click)="changePermissions(user.userName, role.name)">
+        <div id="adminb" *ngIf="role.name==='admin'"><span class="glyphicon">&#xe014;</span> Usuń uprawnienia administratora</div>
+        <div id="userb" *ngIf="role.name==='user'"><span class="glyphicon">&#xe013;</span> Dodaj uprawnienia administratora</div></button>
     </div>
-   
+  </div>
     <br>
-    <br>
+ 
   </div>
 </div>
+</div>
+
+
+
+    

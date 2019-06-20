@@ -26,7 +26,7 @@ button {
 }
 
 button:hover {
-  background-color: rgb(70, 70, 70);
+  background-color: black;
   color: orange;
 }
 
@@ -69,7 +69,7 @@ button:hover {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: black;
+  background-color: rgb(70,70,70);
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid orange;
   width: 30%; /* Could be more or less, depending on screen size */
@@ -89,7 +89,7 @@ button:hover {
 
 .close:hover,
 .close:focus {
-  color: rgb(70, 70, 70);
+  color: red;
   cursor: pointer;
 }
 

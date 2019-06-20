@@ -3,7 +3,7 @@ ul {
   margin: 0;
   padding: 10px;
   overflow: hidden;
-  background-color: black;
+  background-color: rgb(70, 70, 70);
  
 }
 
@@ -18,12 +18,12 @@ li a {
   text-align: center;
   padding: 10px 20px;
   border-radius: 5em;
-  border-color: black;
+  border-color: rgb(70, 70, 70);
   background-color: orange;
 }
 
 li a:hover {
-  background-color: rgb(70, 70, 70);
+  background-color: black;
   color: orange;
 }
 

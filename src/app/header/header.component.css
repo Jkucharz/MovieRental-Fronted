@@ -1,5 +1,5 @@
  #logo{
-    background-color: black;
+    background-color: rgb(70,70,70);
     padding: 10px;
     
   }
@@ -9,6 +9,8 @@
     color: orange;
     font-family: cursive;
     padding-top: 40px ;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
  
