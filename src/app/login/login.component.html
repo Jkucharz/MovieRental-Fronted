@@ -1,44 +1,42 @@
-
-
-<button onclick="document.getElementById('id01').style.display='block'" class="btn btn-info btn-lg" style="width:auto;"><span class="glyphicon glyphicon-user"></span> Zaloguj</button>
+<button onclick="document.getElementById('id01').style.display='block'" class="btn btn-info btn-lg"
+  style="width:auto;"><span class="glyphicon glyphicon-user"></span> Zaloguj</button>
 <div id="id01" class="modal">
-  
-  <form (ngSubmit)="login(formData)" #formData = "ngForm" class="modal-content animate" action="/action_page.php">
+
+  <form (ngSubmit)="login(formData)" #formData="ngForm" class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">
-      
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    
+
+      <span onclick="document.getElementById('id01').style.display='none'" class="close"
+        title="Close Modal">&times;</span>
+
     </div>
 
     <div class="container">
-      <h1 style="color: orange">Zaloguj się!</h1>
+      <h1 style="color: orange"><span class="glyphicon">&#xe008;</span> Zaloguj się!</h1>
 
       <label for="uname"><b>Nazwa: </b></label>
       <input ngModel type="text" placeholder="Enter Username" name="uname" required>
-        <br>
+      <br>
       <label for="psw"><b>Hasło: </b></label>
       <input ngModel type="password" placeholder="Enter Password" name="psw" required>
-        <br>
-        <p style="color:red;">{{loggedError}}</p>
-        
-      <button type="submit">Zaloguj</button>
+      <br>
+      <p style="color:red;">{{loggedError}}</p>
     </div>
 
-    <div class="container" >
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-    
-    </div>
+    <p><button class="button2" type="submit">Zaloguj</button>
+
+   <button style="float: left" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></p>
+  
   </form>
 </div>
 
 <script>
-// Get the modal
-var modal = document.getElementById('id01');
+  // Get the modal
+  var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+      modal.style.display = "none";
     }
-}
+  }
 </script>

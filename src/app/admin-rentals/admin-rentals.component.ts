@@ -10,12 +10,15 @@ import { AuthService } from '../service/auth.service';
 export class AdminRentalsComponent implements OnInit {
   loggedAdmin;
   rentals;
+ 
+  
 
-  constructor(private authService: AuthService, private rentalService :RentalService) { }
+  constructor(private authService: AuthService, private rentalService :RentalService,) { }
 
   ngOnInit() {
     this.subcribeVariable();
     this.getAllRentals();
+
   }
 
   getAllRentals(){
@@ -23,6 +26,7 @@ export class AdminRentalsComponent implements OnInit {
       this.rentals = value;
     });
   }
+
 
   private subcribeVariable(){
     this.authService.setUserName();

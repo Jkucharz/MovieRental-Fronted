@@ -1,24 +1,41 @@
 <app-header></app-header>
 <app-navbar></app-navbar> 
 
+<div id="rentals">
+
+  <h1><span class="glyphicon">&#xe025;</span> Moje wypożyczenia <span class="glyphicon">&#xe025;</span></h1>
+<br>
+
 <div *ngIf="logged">
   <h1>{{error}}</h1>
-  <div *ngFor="let rental of rentals">
-    <p>Data wypożyczenia: {{rental.rentalTime}}</p>
-    <p>Data zwrotu: {{rental.returnTime}}</p>
-     <p><b>Filmy w wpożyczeniu: </b></p> 
-     <div *ngFor="let movie of rental.movies">
-      <p>Tytuł: {{movie.title}}</p>
-      <div *ngFor="let type of movie.types">
-        <p>Typ: {{type.name}}</p>
-        <p>Reżyser: {{movie.director}}</p>
-        <p>Rok produkcji: {{movie.productionYear}}</p>
-        <p>Opis: {{movie.description}}</p>
-        <p>Ilość Wypożyczeń: {{movie.borrowsQuantity}}</p>
-        <p>Ocena: {{movie.rate}}</p>
+   <div *ngFor="let rental of rentals">
+      <div *ngFor="let movie of rental.movies">
+          <div *ngFor="let type of movie.types">
+
+            <div id="rental">
+                <h3>{{movie.title}}</h3>
+                <table id="mrentals">
+                    <tr style="background-color: rgb(99, 64, 0)">
+                      <th>Data wypożyczenia</th>
+                      <th>Data zwrotu</th>
+                      <th>Gatunek</th>
+                      <th>Reżyser</th>
+                      <th>Rok produkcji</th>
+                    </tr>
+                    <tr>
+    <th>{{rental.rentalTime}}</th>
+    <th>{{rental.returnTime}}</th>
+        <th>{{type.name}}</th>
+        <th>{{movie.director}}</th>
+        <th>{{movie.productionYear}}</th>
+      </tr>
+    </table>
       </div>
+      </div>
+      
       <br>
     </div>
     <br>
   </div>
+</div>
 </div>

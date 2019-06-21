@@ -9,9 +9,8 @@ input[type=text], input[type=password] {
   border: 1px solid orange;
   box-sizing: border-box;
   color: orange;
-  background-color: rgb(70, 70, 70);
-
-
+  background-color: rgb(90, 54, 0);
+  border-radius: 5em
 }
 
 /* Set a style for all buttons */
@@ -31,12 +30,42 @@ button:hover {
   text-align: center;
 }
 
+.button2 {
+  background-color: orange; 
+  color: rgb(1, 44, 1); 
+  border: 5px solid rgb(1, 44, 1);
+  padding: 3px 10px;
+  border-radius: 5em;
+  text-align: center;
+  float: right;
+}
+
+.button2:hover {
+  background-color:rgb(1, 44, 1);
+    color: orange;
+    border: 5px solid orange;
+    padding: 3px 10px;
+    border-radius: 5em;
+}
+
 /* Extra styles for the cancel button */
 
 .cancelbtn {
-  width: auto;
-  padding: 10px 10px;
-  background-color: rgb(255, 136, 0);
+ 
+  padding: 3px 10px;
+  color: rgb(85, 2, 2);
+  border: 5px solid rgb(85, 2, 2);
+  background-color: orange;
+  border-radius: 5em
+  
+  
+}
+.cancelbtn:hover {
+  
+  color: orange;
+  border: 5px solid orange;
+  padding: 3px 10px;
+  background-color:rgb(85, 2, 2);
   border-radius: 5em
 }
 

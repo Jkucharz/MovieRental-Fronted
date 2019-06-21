@@ -11,7 +11,7 @@
     </div>
 
     <div class="container">
-      <h1 style="color: orange">Rejestracja</h1>
+      <h1 style="color: orange"><span class="glyphicon glyphicon-log-in"></span> Rejestracja</h1>
         <br>
       <label for="uname"><b>Nazwa: </b></label>
       <input ngModel type="text" placeholder="Enter Username" name="uname" required>
@@ -26,13 +26,13 @@
       <input ngModel type="password" placeholder="Enter Password" name="rpsw" required>
         <br>
         <p style="color:red;">{{registerError}}</p>
-      <button type="submit">Rejestracja</button>
+   
     </div>
 
-    <div class="container" >
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <p><button class="button2" type="submit">Rejestracja</button>
+      <button style="float: left" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button></p>
     
-    </div>
+    
   </form>
 </div>
 

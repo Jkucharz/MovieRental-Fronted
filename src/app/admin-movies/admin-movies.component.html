@@ -2,30 +2,31 @@
 <app-navbaradmin></app-navbaradmin>
 
 <div id="movies">
-<h1>Lista filmów</h1>
+  <h1><span class="glyphicon">&#xe009;</span> Lista filmów <span class="glyphicon">&#xe009;</span></h1>
 
-<app-addfilm></app-addfilm>
+  <app-addfilm></app-addfilm>
 
-<div *ngIf="loggedAdmin" >
-  <div *ngFor="let movie of movies">
+  <div *ngIf="loggedAdmin">
+    <div *ngFor="let movie of movies">
       <div *ngFor="let type of movie.types">
 
         <div id="movie">
-    <p>Id: {{movie.id}}</p>
-    <p>Tytuł: {{movie.title}}</p>
-    <p>Gatunek: {{type.name}}</p>
-    <p>Reżyser: {{movie.director}}</p>
-    <p>Rok produkcji: {{movie.productionYear}}</p>
-    <p>Opis: {{movie.description}}</p>
-    <p>Ocena: {{movie.rate}}</p>
-    
-    <button class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe020;</span>  Usuń Film</button>
- 
-    <app-editfilm></app-editfilm>
-  
-  </div>
+          <p>Id: {{movie.id}}</p>
+          <p>Tytuł: {{movie.title}}</p>
+          <p>Gatunek: {{type.name}}</p>
+          <p>Reżyser: {{movie.director}}</p>
+          <p>Rok produkcji: {{movie.productionYear}}</p>
+          <p>Opis: {{movie.description}}</p>
+          <p>Ocena: {{movie.rate}}</p>
+
+          <button class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe020;</span> Usuń
+            Film</button>
+
+          <app-editfilm></app-editfilm>
+
+        </div>
         <br>
-  </div>
-  </div>
+      </div>
+    </div>
   </div>
 </div>
