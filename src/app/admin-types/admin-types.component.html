@@ -15,7 +15,7 @@
 <div *ngIf="loggedAdmin">
   
   <div>
-      <input [(ngModel)]="typeName" type="text" placeholder="Podaj nazwe gatunku" name="uname"> 
+      <input [(ngModel)]="typeName" type="text" placeholder="Podaj nazwe gatunku" name="uname">
       <button class="button button1" (click)="addMovieType()"><span class="glyphicon">&#xe013;</span> Dodaj gatunek</button>
       <p>{{addTypeError}}</p>
   </div>

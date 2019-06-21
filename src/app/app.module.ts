@@ -24,6 +24,8 @@ import { AdminTypesComponent } from './admin-types/admin-types.component';
 import { AdminMoviesComponent } from './admin-movies/admin-movies.component';
 import { RentalsComponent } from './rentals/rentals.component';
 import { AdminRentalsComponent } from './admin-rentals/admin-rentals.component';
+import { AddfilmComponent } from './addfilm/addfilm.component';
+import { EditfilmComponent } from './editfilm/editfilm.component';
 
 
 
@@ -47,7 +49,9 @@ import { AdminRentalsComponent } from './admin-rentals/admin-rentals.component';
     AdminTypesComponent,
     AdminMoviesComponent,
     RentalsComponent,
-    AdminRentalsComponent
+    AdminRentalsComponent,
+    AddfilmComponent,
+    EditfilmComponent
   ],
   imports: [
     BrowserModule,

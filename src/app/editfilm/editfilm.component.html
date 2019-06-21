@@ -1,0 +1,55 @@
+
+
+<button onclick="document.getElementById('id02').style.display='block'" class="btn btn-info btn-lg" style="width:auto;"><span class="glyphicon">&#xe030;</span> Edytuj Film</button>
+<div id="id02" class="modal">
+  
+  <form (ngSubmit)="login(formData)" #formData = "ngForm" class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    
+    </div>
+
+    <div class="container">
+      <h1 style="color: orange">Edytuj Film</h1>
+
+      <label for="mname"><b>Tytuł: </b></label>
+      <input ngModel type="text" placeholder="Enter name" name="mname" required>
+        <br>
+      <label for="mtype"><b>Gatunek: </b></label>
+      <input ngModel type="text" placeholder="Enter Type" name="mtype" required>
+      <br>
+      <label for="mdirector"><b>Reżyser: </b></label>
+      <input ngModel type="text" placeholder="Enter director" name="mdirector" required>
+      <br>
+      <label for="mproductionYear"><b>Rok produkcji: </b></label>
+      <input ngModel type="text" placeholder="Enter production year" name="mproductionYear" required>
+      <br>
+      
+      <label for="mdescription"><b>Opis: </b></label>
+      <textarea ngModel type="text" placeholder="Enter description..." name="mdescription"  required ></textarea>
+        <br>
+        <br>
+        <p style="color:red;">{{loggedError}}</p>
+        
+      <button type="submit" style="float: right"><span class="glyphicon">&#xe013;</span> Edytuj</button>
+
+      <button class="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn" style="float: left"><span class="glyphicon">&#xe014;</span> Cancel</button>
+    
+    </div>
+  </form>
+</div>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>

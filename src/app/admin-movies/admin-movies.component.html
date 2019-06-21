@@ -1,18 +1,31 @@
 <app-header></app-header>
 <app-navbaradmin></app-navbaradmin>
 
-<div *ngIf="loggedAdmin">
+<div id="movies">
+<h1>Lista filmów</h1>
+
+<app-addfilm></app-addfilm>
+
+<div *ngIf="loggedAdmin" >
   <div *ngFor="let movie of movies">
+      <div *ngFor="let type of movie.types">
+
+        <div id="movie">
     <p>Id: {{movie.id}}</p>
     <p>Tytuł: {{movie.title}}</p>
-      <div *ngFor="let type of movie.types">
-        <p>Typ: {{type.name}}</p>
-      </div>
+    <p>Gatunek: {{type.name}}</p>
     <p>Reżyser: {{movie.director}}</p>
     <p>Rok produkcji: {{movie.productionYear}}</p>
     <p>Opis: {{movie.description}}</p>
-    <p>Ilość Wypożyczeń: {{movie.borrowsQuantity}}</p>
     <p>Ocena: {{movie.rate}}</p>
-    <br>
+    
+    <button class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe020;</span>  Usuń Film</button>
+ 
+    <app-editfilm></app-editfilm>
+  
+  </div>
+        <br>
+  </div>
+  </div>
   </div>
 </div>
