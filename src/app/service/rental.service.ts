@@ -22,8 +22,14 @@ export class RentalService {
 }
 
 export interface Rental{
+user?:Array<User>;
 movies?:Array<Movie>;
 rentalTime?:string;
 returnTime?:string;
 rentalShow?:boolean;
+}
+
+export interface User{
+  userName?:string;
+  email?:string;
 }

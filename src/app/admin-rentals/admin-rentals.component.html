@@ -5,30 +5,27 @@
 
 <div id="rentals">
   <h1><span class="glyphicon">&#xe032;</span> Lista wypożyczeń <span class="glyphicon">&#xe032;</span></h1>
-<br>
-<div *ngIf="loggedAdmin">
-    <div *ngFor="let user of users">
-        <p>Name: {{user.userName}}</p>
-        <p>E-mail: {{user.email}}</p>
-    </div>
-  <div *ngFor="let rental of rentals">
+  <br>
+  <div *ngIf="loggedAdmin">
+    <div *ngFor="let rental of rentals">
+      {{rental.user.userName}}
       <div *ngFor="let movie of rental.movies">
-      <div *ngFor="let type of movie.types">
+        
 
-        <div id="rental">
+          <div id="rental">
 
-    <p>Data wypożyczenia: {{rental.rentalTime}}</p>
-    <p>Data zwrotu: {{rental.returnTime}}</p>
-     <p><b>Filmy w wpożyczeniu: </b></p> 
-    <p>Tytuł: {{movie.title}}</p>
-        <p>Typ: {{type.name}}</p>
-        <p>Reżyser: {{movie.director}}</p>
-        <p>Rok produkcji: {{movie.productionYear}}</p>
-        <p>Opis: {{movie.description}}</p>
-        <p>Ocena: {{movie.rate}}</p>
-      </div>
+            <p>Data wypożyczenia: {{rental.rentalTime}}</p>
+            <p>Data zwrotu: {{rental.returnTime}}</p>
+            <p><b>Filmy w wpożyczeniu: </b></p>
+            <p>Tytuł: {{movie.title}}</p>
+            <p *ngFor="let type of movie.types">Typ: {{type.name}}</p>
+            <p>Reżyser: {{movie.director}}</p>
+            <p>Rok produkcji: {{movie.productionYear}}</p>
+            <p>Opis: {{movie.description}}</p>
+            <p>Ocena: {{movie.rate}}</p>
+          </div>
 
-</div>
-</div>
-</div>
-</div>
+        </div>
+    
+    </div>
+  </div>
