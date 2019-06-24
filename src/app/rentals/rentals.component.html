@@ -1,14 +1,14 @@
 <app-header></app-header>
-<app-navbar></app-navbar> 
+<app-navbar></app-navbar>
 
 <div id="rentals">
 
   <h1><span class="glyphicon">&#xe025;</span> Moje wypożyczenia <span class="glyphicon">&#xe025;</span></h1>
-<br>
+  <br>
 
-<div *ngIf="logged">
-  <h1>{{error}}</h1>
-   <div *ngFor="let rental of rentals">
+  <div *ngIf="logged">
+    <h1>{{error}}</h1>
+    <!-- <div *ngFor="let rental of rentals">
       <div *ngFor="let movie of rental.movies">
           <div *ngFor="let type of movie.types">
 
@@ -36,6 +36,26 @@
       <br>
     </div>
     <br>
+  </div> -->
+    <div *ngFor="let rental of rentals">
+      <h3 (click)="showMovies(rental)">{{rental.rentalTime}}</h3>
+      <table *ngIf="rental.rentalShow" id="mrentals">
+        <tr style="background-color: rgb(99, 64, 0)">
+          <th>Tytuł</th>
+          <th>Gatunek</th>
+          <th>Reżyser</th>
+          <th>Rok produkcji</th>
+          <th>Data zwrotu</th>
+        </tr>
+        <tr *ngFor="let movie of rental.movies">
+          <th>{{movie.title}}</th>
+          <th><p *ngFor="let type of movie.types">{{type.name}}</p></th>
+          <th>{{movie.title}}</th>
+          <th>{{movie.title}}</th>
+          <th>Rok produkcji</th>
+        </tr>
+      </table>
+      <br>
+    </div>
   </div>
-</div>
 </div>

@@ -25,4 +25,5 @@ export interface Rental{
 movies?:Array<Movie>;
 rentalTime?:string;
 returnTime?:string;
+rentalShow?:boolean;
 }

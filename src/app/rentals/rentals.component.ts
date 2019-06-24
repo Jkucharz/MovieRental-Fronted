@@ -20,13 +20,28 @@ export class RentalsComponent implements OnInit {
     this.getUserRentals();
   }
 
+  showMovies(rental){
+    if(rental.rentalShow==false){
+      rental.rentalShow = true;
+    }else{
+      rental.rentalShow = false;
+    }
+  }
+
   getUserRentals(){
     this.rentalService.getUserRentals().subscribe(value=>{
       this.rentals = value;
+      this.setRentalShows();
     },
     error => {
       this.error = error.error.message;
     });
+  }
+
+  setRentalShows(){
+    for (var item of this.rentals) {
+     item.rentalShow = false;
+  }
   }
 
   private subcribeVariable(){
