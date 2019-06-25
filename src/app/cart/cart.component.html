@@ -9,11 +9,11 @@
       <div *ngFor="let type of movie.types">
 
         <div id="movie">
-          <p>Tytuł: {{movie.title}}</p>
-          <p>Gatunek: {{type.name}}</p>
-          <p>Reżyser: {{movie.director}}</p>
-          <p>Rok produkcji: {{movie.productionYear}}</p>
-          <p>Opis: {{movie.description}}</p>
+          <p>Tytuł: <b>{{movie.title}}</b></p>
+          <p>Gatunek: <b>{{type.name}}</b></p>
+          <p>Reżyser: <b>{{movie.director}}</b></p>
+          <p>Rok produkcji: <b>{{movie.productionYear}}</b></p>
+          <p>Opis: <b>{{movie.description}}</b></p>
 
           <button class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe020;</span> Usuń
             film z koszyka</button>

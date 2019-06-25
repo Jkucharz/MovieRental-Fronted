@@ -1,49 +1,101 @@
 #movies{
     background-color: rgb(70, 70, 70);
     color:orange;
-    border: 2px solid orange;
-    border-radius: 5px;
     margin-top:5px;
     margin-left: 10%;
     margin-right:10%;
-    text-align: center;
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+    
 }
 
+#movietit{
+    border: 2px solid orange;
+    padding: 5px; 
+    padding-left: 25px;  
+    margin-left: 7%;
+    margin-right:7%;
+    background: linear-gradient(orange,black);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 20px;
+}
 
 #movie{
     background-color: rgb(70, 70, 70);
     color:orange;
-    border: 2px solid orange;
-    border-radius: 5px;
-    margin-top:5px;
-    margin-left: 10%;
-    margin-right:10%;
-    text-align: center;
+    border-left: 2px solid orange;
+    border-right: 2px solid orange;
+    border-bottom: 2px solid orange;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin-left: 7%;
+    margin-right:7%;
+    
+    
+    
 }
 
 p{
     font-size: 17px;
+    color: rgb(179, 179, 179);
+    display: inline-block;
+    padding-left:20px;
+    padding-top:15px;
 }
 
 .button {
-    background-color: orange; 
-    border: 5px solid rgb(1, 44, 1);
-    color: rgb(1, 44, 1);
-    padding: 3px 10px;
+    
+    background-image: linear-gradient(orange, rgb(9, 255, 0)); 
+    border: 0px;
+    color: rgb(1, 20, 44);
+    padding: 10px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 8px 2px;
+    margin: 0px 10px;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 5em;
+
   }
 
   .button:hover {
-    background-color:rgb(1, 44, 1);
+    background-image: linear-gradient(rgb(1, 20, 44), rgb(3, 83, 0)); 
     color: orange;
-    border: 5px solid orange;
+    
   }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  .button:hover:after {
+    content: attr(data-hover);
+    
+  }
+  
+  
+b{
+   
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+    color: orange;
+}
+
 

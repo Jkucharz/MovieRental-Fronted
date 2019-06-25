@@ -3,27 +3,36 @@
 <app-footer></app-footer>
 
 
-        <div id="movies">
-            <h1><span class="glyphicon">&#xe009;</span> Filmy <span class="glyphicon">&#xe009;</span></h1>
-          <br>
-            
-      <div *ngFor="let movie of movies">
-        <div *ngFor="let type of movie.types">
-  
-          <div id="movie">
-            <p>Tytuł: {{movie.title}}</p>
-            <p>Gatunek: {{type.name}}</p>
-            <p>Reżyser: {{movie.director}}</p>
-            <p>Rok produkcji: {{movie.productionYear}}</p>
-            <p>Opis: {{movie.description}}</p>
-            <p>Ocena: {{movie.rate}}</p>
-  
-            <button *ngIf="logged" class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe116;</span> Dodaj do koszyka</button>
-  
-  
-          </div>
-          <br>
-        </div>
-      </div>
+<div style="border: 2px solid orange; border-radius: 5px;" id="movies">
+  <h1 style="text-align: center;"><span class="glyphicon">&#xe009;</span> Filmy <span class="glyphicon">&#xe009;</span>
+  </h1>
+  <br>
+
+  <div *ngFor="let movie of movies">
+    <div id="movietit" style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black">
+      {{movie.title}} </div>
+
+    <div id="movie">
+
+      <p style="float: left; ">Data produkcji: <b>({{movie.productionYear}})</b></p>
+
+      <p style="float: left;"> Gatunek:</p>
+
+      <div style="float: left; padding-top: 15px" *ngFor="let type of movie.types"><b>{{type.name}}</b> </div>
+      <p style=" float: left;">Reżyser: <b>{{movie.director}}</b></p>
+      <br>
+
+      <p>Opis: <b>{{movie.description}}</b></p>
+      <br>
+
+      <p >Ocena: <b>{{movie.rate}}</b></p>
+      
+      
+      <button style=" float:right" *ngIf="logged" class="button" data-hover="Dodaj do koszyka" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe116;</span></button>
+      
+
+
     </div>
-  
+  <br>
+  </div>
+</div>

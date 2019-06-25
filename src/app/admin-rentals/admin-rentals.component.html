@@ -6,12 +6,13 @@
 
   <div id="rentals">
 
-      <h1><span class="glyphicon">&#xe032;</span> Lista wypożyczeń <span class="glyphicon">&#xe032;</span></h1>
+      <h1 style="text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;"><span class="glyphicon">&#xe032;</span> Lista wypożyczeń <span class="glyphicon">&#xe032;</span></h1>
     <br>
     
+    <h3 style="text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;">Data wypożyczenia:</h3>
   <div *ngFor="let rental of rentals">
     
-    <button class="button" (click)="showMovies(rental)"><span class="glyphicon">&#xe086;</span><b> {{rental.user.userName}} </b> <span class="glyphicon">&#xe086;</span> </button>
+    <button class="button" (click)="showMovies(rental)"><span class="glyphicon">&#xe086;</span><b> {{rental.rentalTime}} </b> <span class="glyphicon">&#xe086;</span> </button>
     <br>
      
       <table *ngIf="rental.rentalShow" id="mrentals">

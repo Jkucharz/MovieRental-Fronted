@@ -1,5 +1,5 @@
  #logo{
-    background-color: rgb(70,70,70);
+    background: linear-gradient(orange,rgb(70,70,70));
     padding: 10px;
     
   }
@@ -11,6 +11,8 @@
     padding-top: 40px ;
     margin-top: 0px;
     margin-bottom: 0px;
+     
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
   }
 
  

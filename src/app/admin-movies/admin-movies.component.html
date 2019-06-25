@@ -5,19 +5,19 @@
 
   <div *ngIf="loggedAdmin">
       <div id="movies">
-          <h1><span class="glyphicon">&#xe009;</span> Lista filmów <span class="glyphicon">&#xe009;</span></h1>
-        
+          <h1 style="    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;"><span class="glyphicon">&#xe009;</span> Lista filmów <span class="glyphicon">&#xe009;</span></h1>
+        <br>
           <app-addfilm></app-addfilm>
     <div *ngFor="let movie of movies">
-      <div *ngFor="let type of movie.types">
+      
 
         <div id="movie">
-          <p>Tytuł: {{movie.title}}</p>
-          <p>Gatunek: {{type.name}}</p>
-          <p>Reżyser: {{movie.director}}</p>
-          <p>Rok produkcji: {{movie.productionYear}}</p>
-          <p>Opis: {{movie.description}}</p>
-          <p>Ocena: {{movie.rate}}</p>
+          <p>Tytuł: <b>{{movie.title}}</b></p>
+          <p >Gatunek: <b *ngFor="let type of movie.types">|{{type.name}}|</b></p>
+          <p>Reżyser: <b>{{movie.director}}</b></p>
+          <p>Rok produkcji: <b>{{movie.productionYear}}</b></p>
+          <p>Opis: <b>{{movie.description}}</b></p>
+          <p>Ocena: <b>{{movie.rate}}</b></p>
 
           <button class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe020;</span> Usuń
             Film</button>
@@ -27,6 +27,5 @@
         </div>
         <br>
       </div>
-    </div>
   </div>
 </div>
