@@ -20,6 +20,14 @@ export class RentalsComponent implements OnInit {
     this.getUserRentals();
   }
 
+  showMovies(rental){
+    if(rental.rentalShow==false){
+      rental.rentalShow = true;
+    }else{
+      rental.rentalShow = false;
+    }
+  }
+
   getUserRentals(){
     this.rentalService.getUserRentals().subscribe(value=>{
       this.rentals = value;
@@ -30,13 +38,7 @@ export class RentalsComponent implements OnInit {
     });
   }
 
-  showMovies(rental){
-    if(rental.rentalShow==false){
-      rental.rentalShow = true;
-    }else{
-      rental.rentalShow = false;
-    }
-  }
+
 
   setRentalShows(){
     for (var item of this.rentals) {
