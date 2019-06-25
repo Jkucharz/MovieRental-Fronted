@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
+import { HttpMoviesService } from '../service/http-movies.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  logged;
+  movies;
+
+
+  constructor(private authService: AuthService, private movieService :HttpMoviesService) { }
 
   ngOnInit() {
-    localStorage.removeItem("email");
+    this.subcribeVariable();
+    this.getAllMovies();
+  }
+
+  getAllMovies(){
+    this.movieService.getAllMovies().subscribe(value=>{
+      this.movies = value;
+    });
+  }
+
+  private subcribeVariable(){
+    this.authService.setUserName();
+     this.authService.getLogged().subscribe(value=>{
+       this.logged = value;
+     });
   }
 
 }

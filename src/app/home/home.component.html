@@ -1,4 +1,29 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<app-movies></app-movies>
 <app-footer></app-footer>
+
+
+        <div id="movies">
+            <h1><span class="glyphicon">&#xe009;</span> Filmy <span class="glyphicon">&#xe009;</span></h1>
+          <br>
+            
+      <div *ngFor="let movie of movies">
+        <div *ngFor="let type of movie.types">
+  
+          <div id="movie">
+            <p>Tytuł: {{movie.title}}</p>
+            <p>Gatunek: {{type.name}}</p>
+            <p>Reżyser: {{movie.director}}</p>
+            <p>Rok produkcji: {{movie.productionYear}}</p>
+            <p>Opis: {{movie.description}}</p>
+            <p>Ocena: {{movie.rate}}</p>
+  
+            <button *ngIf="logged" class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe116;</span> Dodaj do koszyka</button>
+  
+  
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  
