@@ -1,13 +1,10 @@
 <app-header></app-header>
-<app-navbaradmin></app-navbaradmin>
+<app-navbaruser></app-navbaruser>
 
+<div id="movies">
+  <h1><span class="glyphicon">&#xe009;</span> Mój koszyk <span class="glyphicon">&#xe009;</span></h1>
+  <br>
 
-
-  <div *ngIf="loggedAdmin">
-      <div id="movies">
-          <h1><span class="glyphicon">&#xe009;</span> Lista filmów <span class="glyphicon">&#xe009;</span></h1>
-        
-          <app-addfilm></app-addfilm>
     <div *ngFor="let movie of movies">
       <div *ngFor="let type of movie.types">
 
@@ -17,16 +14,14 @@
           <p>Reżyser: {{movie.director}}</p>
           <p>Rok produkcji: {{movie.productionYear}}</p>
           <p>Opis: {{movie.description}}</p>
-          <p>Ocena: {{movie.rate}}</p>
 
           <button class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe020;</span> Usuń
-            Film</button>
+            film z koszyka</button>
 
-          <app-editfilm></app-editfilm>
 
         </div>
         <br>
       </div>
     </div>
-  </div>
+  
 </div>

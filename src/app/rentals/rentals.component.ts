@@ -23,12 +23,26 @@ export class RentalsComponent implements OnInit {
   getUserRentals(){
     this.rentalService.getUserRentals().subscribe(value=>{
       this.rentals = value;
+      this.setRentalShows();
     },
     error => {
       this.error = error.error.message;
     });
   }
 
+  showMovies(rental){
+    if(rental.rentalShow==false){
+      rental.rentalShow = true;
+    }else{
+      rental.rentalShow = false;
+    }
+  }
+
+  setRentalShows(){
+    for (var item of this.rentals) {
+     item.rentalShow = false;
+  }
+  }
   private subcribeVariable(){
     this.authService.getLogged().subscribe(value=>{
       this.logged = value;

@@ -7,12 +7,12 @@
 <div>
 
     <div *ngIf="!loggedAdmin">
-        <li><a href="/" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home"></span> Strona Główna</a></li>
-        
-        <h1>
-          <p>Brak wystarczających uprawnień</p>
-          <p>Przejdź na stronę główną, zaloguj się i spróbuj jeszcze raz.</p>
-        </h1>
+        <ul><li><a href="/" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-home"></span> Strona Główna</a></li></ul>
+        <h1 style="text-align: center">
+            <p>Brak wystarczających uprawnień</p>
+            <p>Przejdź na stronę główną, zaloguj się i spróbuj jeszcze raz.</p>
+          </h1>
+      
         </div>
    
 <ul *ngIf="loggedAdmin">
@@ -27,7 +27,5 @@
   <li> <a href="admin/rentals" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-list-alt"></span> Wypożyczenia</a></li>
 
 </ul>
-
-
 
 </div>

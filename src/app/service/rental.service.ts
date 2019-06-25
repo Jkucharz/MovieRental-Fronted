@@ -25,4 +25,11 @@ export interface Rental{
 movies?:Array<Movie>;
 rentalTime?:string;
 returnTime?:string;
+rentalShow?:boolean;
+user?:Array<User>;
 }
+
+export interface User{
+  userName?:string;
+  email?:string;
+} 

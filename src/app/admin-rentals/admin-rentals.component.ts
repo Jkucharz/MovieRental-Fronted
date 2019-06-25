@@ -10,6 +10,7 @@ import { AuthService } from '../service/auth.service';
 export class AdminRentalsComponent implements OnInit {
   loggedAdmin;
   rentals;
+  error;
  
   
 
@@ -24,9 +25,26 @@ export class AdminRentalsComponent implements OnInit {
   getAllRentals(){
     this.rentalService.getAllRentals().subscribe(value=>{
       this.rentals = value;
+      this.setRentalShows();
+    },
+    error => {
+      this.error = error.error.message;
     });
   }
 
+   showMovies(rental){
+    if(rental.rentalShow==false){
+      rental.rentalShow = true;
+    }else{
+      rental.rentalShow = false;
+    }
+  }
+
+  setRentalShows(){
+    for (var item of this.rentals) {
+     item.rentalShow = false;
+  }
+  }
 
   private subcribeVariable(){
     this.authService.setUserName();

@@ -26,6 +26,8 @@ import { RentalsComponent } from './rentals/rentals.component';
 import { AdminRentalsComponent } from './admin-rentals/admin-rentals.component';
 import { AddfilmComponent } from './addfilm/addfilm.component';
 import { EditfilmComponent } from './editfilm/editfilm.component';
+import { CartComponent } from './cart/cart.component';
+
 
 
 
@@ -51,7 +53,9 @@ import { EditfilmComponent } from './editfilm/editfilm.component';
     RentalsComponent,
     AdminRentalsComponent,
     AddfilmComponent,
-    EditfilmComponent
+    EditfilmComponent,
+    CartComponent,
+
   ],
   imports: [
     BrowserModule,

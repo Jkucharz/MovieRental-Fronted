@@ -9,6 +9,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ExampleComponent } from './example/example.component';
 import { HomeComponent } from './home/home.component';
 import { RentalsComponent } from './rentals/rentals.component';
+import { CartComponent } from './cart/cart.component';
+
 
 
 
@@ -29,6 +31,10 @@ const appRoutes: Routes = [
   {
     path: 'rentals',
     component: RentalsComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   },
   {
     path: 'admin',
@@ -55,6 +61,7 @@ const appRoutes: Routes = [
     redirectTo: '/home',
     pathMatch: 'full'
   }
+ 
 ];
 
 @NgModule({

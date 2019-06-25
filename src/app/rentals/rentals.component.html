@@ -8,34 +8,29 @@
 
 <div *ngIf="logged">
   <h1>{{error}}</h1>
-   <div *ngFor="let rental of rentals">
-      <div *ngFor="let movie of rental.movies">
-          <div *ngFor="let type of movie.types">
-
-            <div id="rental">
-                <h3>{{movie.title}}</h3>
-                <table id="mrentals">
-                    <tr style="background-color: rgb(99, 64, 0)">
-                      <th>Data wypożyczenia</th>
-                      <th>Data zwrotu</th>
-                      <th>Gatunek</th>
-                      <th>Reżyser</th>
-                      <th>Rok produkcji</th>
-                    </tr>
-                    <tr>
-    <th>{{rental.rentalTime}}</th>
-    <th>{{rental.returnTime}}</th>
-        <th>{{type.name}}</th>
+   
+  <div *ngFor="let rental of rentals">
+      <button class="button" (click)="showMovies(rental)"> Data wypożyczenia <p><b>{{rental.rentalTime}}</b></p> </button>
+      <br>
+    
+    <table *ngIf="rental.rentalShow" id="mrentals">
+      <tr style="background-color: rgb(99, 64, 0)">
+        <th>Tytuł</th>
+        <th>Gatunek</th>
+        <th>Reżyser</th>
+        <th>Rok produkcji</th>
+        <th>Data zwrotu</th>
+      </tr>
+      <tr *ngFor="let movie of rental.movies">
+        <th>{{movie.title}}</th>
+        <th><p *ngFor="let type of movie.types">{{type.name}}</p></th>
         <th>{{movie.director}}</th>
         <th>{{movie.productionYear}}</th>
+        <th>{{rental.returnTime}}</th>
       </tr>
     </table>
-      </div>
-      </div>
-      
-      <br>
-    </div>
     <br>
   </div>
 </div>
 </div>
+

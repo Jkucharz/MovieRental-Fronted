@@ -1,34 +1,41 @@
 <app-header></app-header>
 <app-navbaradmin></app-navbaradmin>
 
-
-
-<div id="rentals">
-  <h1><span class="glyphicon">&#xe032;</span> Lista wypożyczeń <span class="glyphicon">&#xe032;</span></h1>
-<br>
 <div *ngIf="loggedAdmin">
-    <div *ngFor="let user of users">
-        <p>Name: {{user.userName}}</p>
-        <p>E-mail: {{user.email}}</p>
-    </div>
+  <h1>{{error}}</h1>
+
+  <div id="rentals">
+
+      <h1><span class="glyphicon">&#xe032;</span> Lista wypożyczeń <span class="glyphicon">&#xe032;</span></h1>
+    <br>
+    
   <div *ngFor="let rental of rentals">
-      <div *ngFor="let movie of rental.movies">
-      <div *ngFor="let type of movie.types">
+    
+    <button class="button" (click)="showMovies(rental)"><span class="glyphicon">&#xe086;</span><b> {{rental.user.userName}} </b> <span class="glyphicon">&#xe086;</span> </button>
+    <br>
+     
+      <table *ngIf="rental.rentalShow" id="mrentals">
+          <tr>
+      <tr style="background-color: rgb(99, 64, 0)">
+        
+        <th>Tytuł</th>
+        <th>Gatunek</th>
+        <th>Reżyser</th>
+        <th>Rok produkcji</th>
+        <th>Data wypożyczenia</th>
+        <th>Data zwrotu</th>
+      </tr>
+      <tr *ngFor="let movie of rental.movies">
+        <th>{{movie.title}}</th>
+        <th><p *ngFor="let type of movie.types">{{type.name}}</p></th>
+        <th>{{movie.director}}</th>
+        <th>{{movie.productionYear}}</th>
+        <th>{{rental.rentalTime}}</th>
+        <th>{{rental.returnTime}}</th>
 
-        <div id="rental">
-
-    <p>Data wypożyczenia: {{rental.rentalTime}}</p>
-    <p>Data zwrotu: {{rental.returnTime}}</p>
-     <p><b>Filmy w wpożyczeniu: </b></p> 
-    <p>Tytuł: {{movie.title}}</p>
-        <p>Typ: {{type.name}}</p>
-        <p>Reżyser: {{movie.director}}</p>
-        <p>Rok produkcji: {{movie.productionYear}}</p>
-        <p>Opis: {{movie.description}}</p>
-        <p>Ocena: {{movie.rate}}</p>
-      </div>
-
-</div>
-</div>
+      </tr>
+    </table>
+    <br>
+  </div>
 </div>
 </div>

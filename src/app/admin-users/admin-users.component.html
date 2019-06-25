@@ -9,14 +9,10 @@
 <app-header></app-header>
 <app-navbaradmin></app-navbaradmin>
 
-
-<div id="users">
-
-  <h1><span class="glyphicon">&#xe008;</span> Lista użytkowników <span class="glyphicon">&#xe008;</span></h1>
-  <br>
-
-
   <div *ngIf="loggedAdmin">
+      <div id="users">
+      <h1><span class="glyphicon">&#xe008;</span> Lista użytkowników <span class="glyphicon">&#xe008;</span></h1>
+      <br>
     <div *ngFor="let user of users">
       <div *ngFor="let role of user.roles">
         <div id="user">

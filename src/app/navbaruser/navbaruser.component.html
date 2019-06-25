@@ -11,13 +11,13 @@
 
   <li><a href="/rentals" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Moje Wypożyczenia</a></li>
 
-  <li><a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Koszyk ({{value}})</a></li>
+  <li><a href="/cart" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Koszyk ({{value}})</a></li>
 
   <li *ngIf="loggedAdmin"> <a href="/admin" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-cog"></span> Panel administratora</a></li>
 
   <li style="float:right"><a (click)="logout()" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-out"></span> Wyloguj!</a></li>
  
-  <li style="float: right"><span style="color: orange" class="glyphicon">&#xe008; {{loggedAs}}</span></li>
+  <li style="float: right"><span style="color: orange; top:8px; font-size: 25px" class="glyphicon">&#xe008; {{loggedAs}} </span></li>
 
   
 </ul>
