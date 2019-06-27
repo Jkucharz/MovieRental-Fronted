@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { HttpMoviesService } from '../service/http-movies.service';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,24 +11,29 @@ import { HttpMoviesService } from '../service/http-movies.service';
 export class CartComponent implements OnInit {
 
   movies;
-  
 
-  constructor(private authService: AuthService, private movieService :HttpMoviesService) { }
+
+  constructor(private authService: AuthService, private cartService: CartService, private movieService: HttpMoviesService) { 
+  }
 
   ngOnInit() {
     this.subcribeVariable();
     this.getAllMovies();
   }
 
-  getAllMovies(){
-    this.movieService.getAllMovies().subscribe(value=>{
-      this.movies = value;
-    });
+  removeMovie(movie){
+
   }
 
-  private subcribeVariable(){
+  getAllMovies() {
+    console.log("wchodzi");
+    console.log(this.cartService.getMovies());
+    this.movies = this.cartService.getMovies();
+  }
+
+  private subcribeVariable() {
     this.authService.setUserName();
-    
+
   }
 
 }

@@ -1,3 +1,4 @@
+import { CartService } from './service/cart.service';
 import { AppRoutingModule } from './app.routing.module';
 import { HttpMoviesService } from './service/http-movies.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,10 +28,6 @@ import { AdminRentalsComponent } from './admin-rentals/admin-rentals.component';
 import { AddfilmComponent } from './addfilm/addfilm.component';
 import { EditfilmComponent } from './editfilm/editfilm.component';
 import { CartComponent } from './cart/cart.component';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -63,7 +60,7 @@ import { CartComponent } from './cart/cart.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [HttpMoviesService, AuthService],
+  providers: [HttpMoviesService, AuthService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

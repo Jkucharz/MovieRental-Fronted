@@ -28,7 +28,7 @@
       <p >Ocena: <b>{{movie.rate}}</b></p>
       
       
-      <button style=" float:right" *ngIf="logged" class="button" data-hover="Dodaj do koszyka" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe116;</span></button>
+      <button style=" float:right" *ngIf="logged" class="button" data-hover="Dodaj do koszyka" (click)="addMovieToCart(movie)"><span class="glyphicon">&#xe116;</span></button>
       
 
 
