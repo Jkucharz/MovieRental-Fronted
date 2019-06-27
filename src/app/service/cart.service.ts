@@ -23,7 +23,12 @@ export class CartService {
     return this.cartMovies;
   }
 
-  getcartElementNumber(): Observable<number> {
+  countElementsInCart(){
+    this.cartMovies = JSON.parse(localStorage.getItem('cart'));
+    this.cartElementNumber.next(this.cartMovies.length);
+  }
+
+  getCartElementNumber(): Observable<number> {
     return this.cartElementNumber.asObservable();
   }
 }
