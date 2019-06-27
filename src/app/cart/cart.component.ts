@@ -22,12 +22,11 @@ export class CartComponent implements OnInit {
   }
 
   removeMovie(movie){
-
+    this.cartService.removeMovie(movie);
+    this.getAllMovies();
   }
 
   getAllMovies() {
-    console.log("wchodzi");
-    console.log(this.cartService.getMovies());
     this.movies = this.cartService.getMovies();
   }
 

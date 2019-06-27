@@ -6,7 +6,7 @@ import { Subject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-
+  
   cartMovies = new Array<Movie>();
   cartElementNumber = new Subject<number>();
 
@@ -15,6 +15,14 @@ export class CartService {
 
   addMovie(movie: Movie) {
     this.cartMovies.push(movie);
+    localStorage.setItem('cart', JSON.stringify(this.cartMovies));
+    this.countElementsInCart();
+  }
+
+  removeMovie(x: Movie) {
+    this.cartMovies = JSON.parse(localStorage.getItem('cart'));
+    const index = this.cartMovies.findIndex(movie => movie.id === x.id);
+    this.cartMovies.splice(index,1);
     localStorage.setItem('cart', JSON.stringify(this.cartMovies));
     this.countElementsInCart();
   }
