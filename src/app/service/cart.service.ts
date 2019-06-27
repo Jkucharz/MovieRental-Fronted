@@ -16,15 +16,19 @@ export class CartService {
   addMovie(movie: Movie) {
     this.cartMovies.push(movie);
     localStorage.setItem('cart', JSON.stringify(this.cartMovies));
+    this.countElementsInCart();
   }
 
   getMovies() {
     this.cartMovies = JSON.parse(localStorage.getItem('cart'));
+    this.countElementsInCart();
     return this.cartMovies;
   }
 
   countElementsInCart(){
-    this.cartMovies = JSON.parse(localStorage.getItem('cart'));
+    if(localStorage.getItem('cart')){
+      this.cartMovies = JSON.parse(localStorage.getItem('cart'));
+    }
     this.cartElementNumber.next(this.cartMovies.length);
   }
 

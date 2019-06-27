@@ -81,6 +81,7 @@ export class AuthService {
     localStorage.clear();
     this.setUserName();
     this.router.navigateByUrl('/home');
+    window.location.reload();
   }
 
   getLogged(): Observable<boolean> {
