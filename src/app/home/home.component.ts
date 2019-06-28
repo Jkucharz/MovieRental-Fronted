@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
 
   addMovieToCart(movie){
     this.cartService.addMovie(movie);
-    console.log(this.cartService.getMovies());
   }
 
   getAllMovies(){

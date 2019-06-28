@@ -9,11 +9,11 @@ import { AuthService } from '../service/auth.service';
 })
 export class NavbaruserComponent implements OnInit {
 
-  cartsElementsNumber;
+  cartsElementsNumber = 0;
   loggedAs;
   loggedAdmin;
 
-  constructor(private authService: AuthService, private cartService: CartService) { 
+  constructor(private authService: AuthService, private cartService: CartService) {
     this.subcribeVariable();
   }
 

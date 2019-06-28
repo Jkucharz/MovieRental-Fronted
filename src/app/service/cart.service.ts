@@ -29,6 +29,11 @@ export class CartService {
     this.countElementsInCart();
   }
 
+  removeAllMovies() {
+    localStorage.removeItem('cart');
+    this.cartMovies = null;
+  }
+
   getMovies() {
     this.cartMovies = JSON.parse(localStorage.getItem('cart'));
     this.countElementsInCart();
@@ -37,29 +42,25 @@ export class CartService {
 
   borrowMovies() {
     this.cartMovies = JSON.parse(localStorage.getItem('cart'));
-
-    let titles = new Array<String>();
-
+    let titles = new Array();
     for (var item of this.cartMovies) {
       titles.push({
         "title": item.title
       });
     }
-
     const moviesToBorrow: MoviesToBorrow = ({
-      movies:titles
-  });
-
-    console.log(moviesToBorrow);
+      movies: titles
+    });
     let headers = new HttpHeaders().set('Authorization', 'bearer  ' + localStorage.getItem('token'));
     this.http.post('http://localhost:8080/rental/add', moviesToBorrow, { headers: headers }).subscribe(post => {
-      console.log(post);
+      this.removeAllMovies();
     });
   }
 
   countElementsInCart() {
     if (localStorage.getItem('cart')) {
-      this.cartMovies = JSON.parse(localStorage.getItem('cart'));
+      this.cartMovies = JSON.parse(localStorage.getItem('cart')); 
+      this.cartElementNumber.next(this.cartMovies.length);
     }
     this.cartElementNumber.next(this.cartMovies.length);
   }
@@ -70,9 +71,5 @@ export class CartService {
 }
 
 export interface MoviesToBorrow {
-  movies: Array<Title>;
-}
-
-export interface Title {
-  title: string;
+  movies;
 }
