@@ -40,6 +40,10 @@ export class AdminRentalsComponent implements OnInit {
     }
   }
 
+  removeRental(id: number){
+    this.rentalService.removeRental(id);
+  }
+
   setRentalShows(){
     for (var item of this.rentals) {
      item.rentalShow = false;

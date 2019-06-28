@@ -13,6 +13,7 @@
   <div *ngFor="let rental of rentals">
     
     <button class="button" (click)="showMovies(rental)"><span class="glyphicon">&#xe086;</span><b> {{rental.rentalTime}} </b> <span class="glyphicon">&#xe086;</span> </button>
+    <button class="button" (click)="removeRental(rental.id)"><span class="glyphicon">&#xe086;</span><b> Użytkownik zwraca filma (czy coś takiego) </b> <span class="glyphicon">&#xe086;</span> </button>
     <br>
      
       <table *ngIf="rental.rentalShow" id="mrentals">
