@@ -21,6 +21,10 @@ export class CartComponent implements OnInit {
     this.getAllMovies();
   }
 
+  borrow(){
+    this.cartService.borrowMovies();
+  }
+
   removeMovie(movie){
     this.cartService.removeMovie(movie);
     this.getAllMovies();

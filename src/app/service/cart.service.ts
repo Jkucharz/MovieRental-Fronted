@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './http-movies.service';
 import { Subject, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  
+
   cartMovies = new Array<Movie>();
   cartElementNumber = new Subject<number>();
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   addMovie(movie: Movie) {
     this.cartMovies.push(movie);
@@ -22,7 +24,7 @@ export class CartService {
   removeMovie(x: Movie) {
     this.cartMovies = JSON.parse(localStorage.getItem('cart'));
     const index = this.cartMovies.findIndex(movie => movie.id === x.id);
-    this.cartMovies.splice(index,1);
+    this.cartMovies.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(this.cartMovies));
     this.countElementsInCart();
   }
@@ -33,8 +35,30 @@ export class CartService {
     return this.cartMovies;
   }
 
-  countElementsInCart(){
-    if(localStorage.getItem('cart')){
+  borrowMovies() {
+    this.cartMovies = JSON.parse(localStorage.getItem('cart'));
+
+    let titles = new Array<String>();
+
+    for (var item of this.cartMovies) {
+      titles.push({
+        "title": item.title
+      });
+    }
+
+    const moviesToBorrow: MoviesToBorrow = ({
+      movies:titles
+  });
+
+    console.log(moviesToBorrow);
+    let headers = new HttpHeaders().set('Authorization', 'bearer  ' + localStorage.getItem('token'));
+    this.http.post('http://localhost:8080/rental/add', moviesToBorrow, { headers: headers }).subscribe(post => {
+      console.log(post);
+    });
+  }
+
+  countElementsInCart() {
+    if (localStorage.getItem('cart')) {
       this.cartMovies = JSON.parse(localStorage.getItem('cart'));
     }
     this.cartElementNumber.next(this.cartMovies.length);
@@ -43,4 +67,12 @@ export class CartService {
   getCartElementNumber(): Observable<number> {
     return this.cartElementNumber.asObservable();
   }
+}
+
+export interface MoviesToBorrow {
+  movies: Array<Title>;
+}
+
+export interface Title {
+  title: string;
 }
