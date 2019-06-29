@@ -5,7 +5,7 @@
     margin-left: 10%;
     margin-right:10%;
     text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
-    
+    box-shadow: 5px 10px #ee8f00
 }
 
 #movietit{
@@ -92,6 +92,19 @@ p{
 b{
     text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
     color: orange;
+}
+
+select{
+  padding: 10px 16px;
+  margin-left: 10%;
+  margin-right: 20px;
+  display: inline-block;
+  border: 1px solid orange;
+  box-sizing: border-box;
+  color: orange;
+  background-color: rgb(90, 54, 0);
+  border-radius: 5em;
+  text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
 }
 
 

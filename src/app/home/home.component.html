@@ -7,6 +7,17 @@
 <div style="border: 2px solid orange; border-radius: 5px;" id="movies">
   <h1 style="text-align: center;"><span class="glyphicon">&#xe009;</span> Filmy <span class="glyphicon">&#xe009;</span>
   </h1>
+<br>
+<div>
+  <select name="sort">
+      <option value="title">Tytuł</option>
+      <option value="rate">Ocena</option>
+      </select>
+      <input type="radio" name="sort" value="2" />Malejąco
+      <input style="margin-left: 10px" type="radio" name="sort" value="4" />Rosnąco
+      <button class="button" data-hover="Sortuj" (click)="removeMovie(movie)"><span class="glyphicon">&#xe150;</span></button>
+    </div>
+
   <br>
 
   <div *ngFor="let movie of movies">
@@ -38,8 +49,6 @@
         <form (ngSubmit)="register(formData)" #formData="ngForm" class="modal-content animate"
           action="/action_page.php">
           <div class="imgcontainer">
-
-      
 
           </div>
 
