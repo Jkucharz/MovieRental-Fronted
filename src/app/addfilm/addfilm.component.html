@@ -16,9 +16,15 @@
       <label for="mname"><b>Tytuł: </b></label>
       <input ngModel type="text" placeholder="Enter name" name="mname" required>
         <br>
-      <label for="mtype"><b>Gatunek: </b></label>
-      <input ngModel type="text" placeholder="Enter Type" name="mtype" required>
+
+      
+       <label for="mtype"><b>Gatunek:</b></label>
+      <label  *ngFor="let type of types" for="mtype">
+        <input type="checkbox" name="???" value="???"> {{type.name}}
+        </label>
+
       <br>
+
       <label for="mdirector"><b>Reżyser: </b></label>
       <input ngModel type="text" placeholder="Enter director" name="mdirector" required>
       <br>
@@ -31,9 +37,9 @@
         <br>
         <br>
         <p style="color:red;">{{loggedError}}</p>
-        <div *ngFor="let type of types">
+        <!-- <div *ngFor="let type of types">
             <h3><p>{{type.name}}  <button class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe014;</span>  Usuń gatunek</button></p> </h3>
-          </div>
+          </div> -->
         
       <button type="submit" style="float: right"><span class="glyphicon">&#xe013;</span> Dodaj film</button>
 

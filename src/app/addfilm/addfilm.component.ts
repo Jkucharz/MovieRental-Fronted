@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TypeService } from '../service/type.service';
 
 @Component({
   selector: 'app-addfilm',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addfilm.component.css']
 })
 export class AddfilmComponent implements OnInit {
+  types;
+  typeName;
 
-  constructor() { }
+  constructor(private typeService: TypeService) {}
 
   ngOnInit() {
+    this.getAllTypes();
+  }
+
+  getAllTypes(){
+    this.typeService.getAllTypes().subscribe(value=>{
+      this.types = value;
+    });
   }
 
 }

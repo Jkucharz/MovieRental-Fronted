@@ -16,9 +16,13 @@
       <label for="mname"><b>Tytuł: </b></label>
       <input ngModel type="text" placeholder="Enter name" name="mname" required>
       <br>
-      <label for="mtype"><b>Gatunek: </b></label>
-      <input ngModel type="text" placeholder="Enter Type" name="mtype" required>
+
+      <label for="mtype"><b>Gatunek:</b></label>
+      <label  *ngFor="let type of types" for="mtype">
+        <input type="checkbox" name="???" value="???"> {{type.name}}
+        </label>
       <br>
+      
       <label for="mdirector"><b>Reżyser: </b></label>
       <input ngModel type="text" placeholder="Enter director" name="mdirector" required>
       <br>

@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<app-footer ></app-footer>
+<app-footer></app-footer>
 
 
 
@@ -26,14 +26,49 @@
       <p>Opis: <b>{{movie.description}}</b></p>
       <br>
 
-      <p >Ocena: <b>{{movie.rate}}</b></p>
+      <p>Ocena: <b>{{movie.rate}}</b></p>
+
+
+      <button onclick="document.getElementById('id03').style.display='block'" class="btn btn-info btn-lg"
+        style="width:auto;" style=" float:right" *ngIf="logged" class="button" data-hover="Dodaj do koszyka"
+        (click)="addMovieToCart(movie)"><span class="glyphicon">&#xe116;</span></button>
+
+      <div id="id03" class="modal">
+
+        <form (ngSubmit)="register(formData)" #formData="ngForm" class="modal-content animate"
+          action="/action_page.php">
+          <div class="imgcontainer">
+
       
-      
-      <button style=" float:right" *ngIf="logged" class="button" data-hover="Dodaj do koszyka" (click)="addMovieToCart(movie)"><span class="glyphicon">&#xe116;</span></button>
-      
+
+          </div>
+
+          <div class="container">
+            <h1 style="color: orange">Film został dodany do koszyka</h1>
+          </div>
+
+          <p><button style="float: right" type="button" onclick="document.getElementById('id03').style.display='none'"
+              class="cancelbtn">OK</button></p>
+
+
+        </form>
+      </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById('id03');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+
 
 
     </div>
-  <br>
+    <br>
   </div>
 </div>
