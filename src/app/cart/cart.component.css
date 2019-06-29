@@ -24,14 +24,10 @@
     
 }
 
-p{
-    font-size: 17px;
-}
-
 .button {
     background-color: orange; 
-    border: 5px solid rgb(85, 2, 2);
-    color: rgb(85, 2, 2);
+    border: 5px solid rgb(1, 44, 1);
+    color: rgb(1, 44, 1);
     padding: 3px 10px;
     text-align: center;
     text-decoration: none;
@@ -45,13 +41,30 @@ p{
   }
 
   .button:hover {
-    background-color:rgb(85, 2, 2);
+    background-color:rgb(1, 44, 1);
     color: orange;
     border: 5px solid orange;
   }
 
-  p{
+  .button1 {
+    background-color: orange; 
+    color: rgb(85, 2, 2); 
+    border: 5px solid rgb(85, 2, 2);
+    padding: 3px 10px;
+    border-radius: 5em;
     
+  }
+
+  .button1:hover {
+    background-color:rgb(85, 2, 2);
+    color: orange;
+    border: 5px solid orange;
+    padding: 3px 10px;
+    border-radius: 5em;
+  }
+
+  p{
+    font-size: 17px;
     color: rgb(179, 179, 179);
   }
 

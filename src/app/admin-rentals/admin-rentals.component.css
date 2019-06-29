@@ -46,18 +46,44 @@
 
   button {
     background-color: orange; 
-    color: black;
+    color:  black;
     border: 0px;
     padding: 5px 100px;
-    border-radius: 5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5em;
+    
   }
   
   button:hover {
-    background-color:black;
+    background-color: black;
+    
       color: orange;
-   
       border-radius: 5em;
+  }
+
+  .button1 {
+    background-color: orange; 
+    color: rgb(1, 44, 1); 
+    border: 5px solid rgb(1, 44, 1);
+    padding: 3px 10px;
+    text-shadow: 0px 1px 1px black, 0 0 25px black, 0 0 1px black;
+    
+  }
+
+  
+  
+  .button1:hover {
+    background-color:rgb(1, 44, 1);
+    color: orange;
+    border: 5px solid orange;
+    padding: 3px 10px;
   }
   
   
