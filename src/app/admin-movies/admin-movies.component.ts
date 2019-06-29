@@ -17,6 +17,7 @@ export class AdminMoviesComponent implements OnInit {
   ngOnInit() {
     this.subcribeVariable();
     this.getAllMovies();
+    this.movieService.sortMovies("");
   }
 
   getAllMovies(){
