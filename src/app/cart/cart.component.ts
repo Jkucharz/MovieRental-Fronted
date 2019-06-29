@@ -11,9 +11,10 @@ import { CartService } from '../service/cart.service';
 export class CartComponent implements OnInit {
 
   movies;
+  showBorrowButton = false;
 
+  constructor(private authService: AuthService, private cartService: CartService, private movieService: HttpMoviesService) {
 
-  constructor(private authService: AuthService, private cartService: CartService, private movieService: HttpMoviesService) { 
   }
 
   ngOnInit() {
@@ -21,13 +22,13 @@ export class CartComponent implements OnInit {
     this.getAllMovies();
   }
 
-  borrow(){
+  borrow() {
     this.cartService.borrowMovies();
     this.cartService.removeAllMovies();
     window.location.reload();
   }
 
-  removeMovie(movie){
+  removeMovie(movie) {
     this.cartService.removeMovie(movie);
     this.getAllMovies();
   }
@@ -38,6 +39,13 @@ export class CartComponent implements OnInit {
 
   private subcribeVariable() {
     this.authService.setUserName();
+    this.cartService.getCartElementNumber().subscribe(value => {
+      if(value==0){
+        this.showBorrowButton = false;
+      }else{
+        this.showBorrowButton = true;
+      }
+    });
 
   }
 

@@ -4,7 +4,8 @@
 <div id="movies">
   <h1><span class="glyphicon">&#xe009;</span> Mój koszyk <span class="glyphicon">&#xe009;</span></h1>
   <br>
-  <button class="button" (click)="borrow()"><span class="glyphicon">&#xe013;</span> WYPOŻYCZ FILMY <span class="glyphicon">&#xe013;</span></button>
+  <button *ngIf="showBorrowButton" class="button" (click)="borrow()"><span class="glyphicon">&#xe013;</span> WYPOŻYCZ FILMY <span class="glyphicon">&#xe013;</span></button>
+  <h1 *ngIf="!showBorrowButton">PUSTY KOSZYK :OOOO</h1>
 
     <div *ngFor="let movie of movies">
 
