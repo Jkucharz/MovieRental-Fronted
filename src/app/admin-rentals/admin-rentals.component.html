@@ -12,7 +12,7 @@
     <h3 style="text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;">Data wypożyczenia:</h3>
   <div *ngFor="let rental of rentals">
     
-    <button class="button" (click)="showMovies(rental)"><span class="glyphicon">&#xe086;</span><b> {{rental.rentalTime}} </b> <span class="glyphicon">&#xe086;</span> </button>
+    <button class="button" (click)="showMovies(rental)"><span class="glyphicon">&#xe086;</span><b> {{rental.rentalTime}} - {{rental.user.userName}} </b> <span class="glyphicon">&#xe086;</span> </button>
     <br>
     <button class="button1" (click)="removeRental(rental.id)"><span class="glyphicon">&#xe013;</span><b> Użytkownik zwrócił film </b><span class="glyphicon">&#xe013;</span></button>
     
