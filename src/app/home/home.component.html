@@ -36,8 +36,16 @@
       <p>Opis: <b>{{movie.description}}</b></p>
       <br>
 
-      <p>Ocena: <b>{{movie.rate}}</b></p>
-
+      <p class="rating"> 
+        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 5</b>
+        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 4</b>
+        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 3</b>
+        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 2</b>
+        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 1</b>
+          <b style="word-spacing: 5px;"> 5/{{movie.rate}} </b> :anecO 
+      </p>
+      
+    
 
       <button onclick="document.getElementById('id03').style.display='block'" class="btn btn-info btn-lg"
         style="width:auto;" style=" float:right" *ngIf="logged" class="button" data-hover="Dodaj do koszyka"
@@ -61,21 +69,6 @@
 
         </form>
       </div>
-
-      <script>
-        // Get the modal
-        var modal = document.getElementById('id03');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
-      </script>
-
-
-
     </div>
     <br>
   </div>

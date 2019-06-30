@@ -1,0 +1,13 @@
+#info{
+    background-color: rgb(70, 70, 70);
+    color:orange;
+    border: 2px solid orange;
+    border-radius: 5px;
+    text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
+    margin-left: 28%;
+    margin-right:28%;
+    text-align: center;
+    box-shadow: 5px 10px #ee8f00;
+    margin-top: 2%;
+    
+}

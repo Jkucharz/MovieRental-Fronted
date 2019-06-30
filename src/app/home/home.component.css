@@ -195,4 +195,23 @@ select{
   margin: 10px;
 }
 
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > button {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  font-size: 1.7em;
+  color: gold;
+  background-color: rgb(70, 70, 70);
+  border: none;
+ 
+}
+.rating > button:hover:before,
+.rating > button:hover ~ button:before {
+   content: "\2605";
+   position: absolute;
+}
 

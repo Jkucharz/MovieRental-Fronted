@@ -2,12 +2,13 @@
 <app-navbar></app-navbar>
 
 <div id="rentals">
+    <div *ngIf="logged">
+        <h1>{{error}}</h1>
 
   <h1><span class="glyphicon">&#xe025;</span> Moje wypożyczenia <span class="glyphicon">&#xe025;</span></h1>
   <br>
 
-  <div *ngIf="logged">
-    <h1>{{error}}</h1>
+  
 
     <div *ngFor="let rental of rentals">
       <button class="button" (click)="showMovies(rental)"><span class="glyphicon glyphicon-list-alt"></span><b> {{rental.rentalTime}} </b><span class="glyphicon glyphicon-list-alt"></span></button>

@@ -1,7 +1,13 @@
 <app-header></app-header>
 <app-navbaruser></app-navbaruser>
 
+
+
 <div id="movies">
+  
+    <div *ngIf="logged">
+        <h1>{{error}}</h1>
+    
   <h1><span class="glyphicon">&#xe009;</span> Mój koszyk <span class="glyphicon">&#xe009;</span></h1>
   <br>
   <button *ngIf="showBorrowButton" class="button" (click)="borrow()"><span class="glyphicon">&#xe013;</span> WYPOŻYCZ FILMY <span class="glyphicon">&#xe013;</span></button>
@@ -23,4 +29,5 @@
         <br>
       </div>
   
+</div>
 </div>

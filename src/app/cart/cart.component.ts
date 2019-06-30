@@ -10,6 +10,7 @@ import { CartService } from '../service/cart.service';
 })
 export class CartComponent implements OnInit {
 
+  logged;
   movies;
   showBorrowButton = false;
 
@@ -39,6 +40,8 @@ export class CartComponent implements OnInit {
 
   private subcribeVariable() {
     this.authService.setUserName();
+    this.authService.getLogged().subscribe(value=>{
+      this.logged = value;});
     this.cartService.getCartElementNumber().subscribe(value => {
       if(value==0){
         this.showBorrowButton = false;
@@ -48,5 +51,7 @@ export class CartComponent implements OnInit {
     });
 
   }
-
 }
+
+
+

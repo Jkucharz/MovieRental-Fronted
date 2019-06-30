@@ -14,7 +14,7 @@
       <h1 style="color: orange"><span class="glyphicon">&#xe030;</span> Edytuj Film</h1>
 
       <label for="mname"><b>Tytuł: </b></label>
-      <input ngModel type="text" placeholder="Enter name" name="mname" required>
+      <input type="text" placeholder="Enter name" name="mname" value="cos" required>
       <br>
 
       <label for="mtype"><b>Gatunek:</b></label>
@@ -34,7 +34,7 @@
       <textarea ngModel type="text" placeholder="Enter description..." name="mdescription" required></textarea>
       <br>
       <br>
-      <p style="color:red;">{{loggedError}}</p>
+      
 
       <button type="submit" style="float: right"><span class="glyphicon">&#xe013;</span> Edytuj</button>
 
@@ -47,14 +47,3 @@
 
 
 
-<script>
-  // Get the modal
-  var modal = document.getElementById('id02');
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-</script>
