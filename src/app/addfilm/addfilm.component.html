@@ -3,7 +3,7 @@
 <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-info btn-lg" style="width:auto;"><span class="glyphicon">&#xe081;</span> Dodaj Film</button>
 <div id="id01" class="modal">
   
-  <form (ngSubmit)="login(formData)" #formData = "ngForm" class="modal-content animate" action="/action_page.php">
+  <form (ngSubmit)="addMovie(formData)" #formData = "ngForm" class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">
       
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -20,7 +20,7 @@
       
        <label for="mtype"><b>Gatunek:</b></label>
       <label  *ngFor="let type of types" for="mtype">
-        <input type="checkbox" name="???" value="???"> {{type.name}}
+        <input (click)="input(type)" type="checkbox" name="type.name" value="type.selected"> {{type.name}}
         </label>
 
       <br>
@@ -36,7 +36,7 @@
       <textarea ngModel type="text" placeholder="Enter description..." name="mdescription"  required ></textarea>
         <br>
         <br>
-        <p style="color:red;">{{loggedError}}</p>
+        <p style="color:red;">{{addError}}</p>
         <!-- <div *ngFor="let type of types">
             <h3><p>{{type.name}}  <button class="button" (click)="removeMovieType(type.name)"><span class="glyphicon">&#xe014;</span>  Usuń gatunek</button></p> </h3>
           </div> -->

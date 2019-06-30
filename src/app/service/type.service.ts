@@ -39,4 +39,5 @@ export class TypeService {
 
 export interface Type {
   name?: string;
+  selected?:boolean;
 }

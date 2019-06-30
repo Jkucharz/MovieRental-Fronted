@@ -6,36 +6,40 @@
 
   <div id="rentals">
 
-      <h1 style="text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;"><span class="glyphicon">&#xe032;</span> Lista wypożyczeń <span class="glyphicon">&#xe032;</span></h1>
+    <h1 style="text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;"><span class="glyphicon">&#xe032;</span>
+      Lista wypożyczeń <span class="glyphicon">&#xe032;</span></h1>
     <br>
-    
-    <h3 style="text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;">Data wypożyczenia:</h3>
-  <div *ngFor="let rental of rentals">
-    
-    <button class="button" (click)="showMovies(rental)"><span class="glyphicon">&#xe086;</span><b> {{rental.rentalTime}} - {{rental.user.userName}} </b> <span class="glyphicon">&#xe086;</span> </button>
-    <br>
-    <button class="button1" (click)="removeRental(rental.id)"><span class="glyphicon">&#xe013;</span><b> Użytkownik zwrócił filmy </b><span class="glyphicon">&#xe013;</span></button>
-    
-    <br>
-     
-      <table *ngIf="rental.rentalShow" id="mrentals">
-      
-      <tr style="background-color: rgb(99, 64, 0)">
-        
-        <th>Tytuł</th>
-        <th>Gatunek</th>
-        <th>Reżyser</th>
-        <th>Rok produkcji</th>
-      </tr>
-      <tr *ngFor="let movie of rental.movies">
-        <th>{{movie.title}}</th>
-        <th><p *ngFor="let type of movie.types">{{type.name}}</p></th>
-        <th>{{movie.director}}</th>
-        <th>{{movie.productionYear}}</th>
 
-      </tr>
-    </table>
-    <br>
+    <h3 style="text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;">Data wypożyczenia:</h3>
+    <div *ngFor="let rental of rentals">
+
+      <button class="button" (click)="showMovies(rental)"><span class="glyphicon">&#xe086;</span><b>
+          {{rental.rentalTime}} - {{rental.user.userName}} </b> <span class="glyphicon">&#xe086;</span> </button>
+      <br>
+      <button class="button1" (click)="removeRental(rental.id)"><span class="glyphicon">&#xe013;</span><b> Użytkownik
+          zwrócił filmy </b><span class="glyphicon">&#xe013;</span></button>
+
+      <br>
+
+      <table *ngIf="rental.rentalShow" id="mrentals">
+
+        <tr style="background-color: rgb(99, 64, 0)">
+
+          <th>Tytuł</th>
+          <th>Gatunek</th>
+          <th>Reżyser</th>
+          <th>Rok produkcji</th>
+        </tr>
+        <tr *ngFor="let movie of rental.movies">
+          <th>{{movie.title}}</th>
+          <th>
+            <p *ngFor="let type of movie.types">{{type.name}}</p>
+          </th>
+          <th>{{movie.director}}</th>
+          <th>{{movie.productionYear}}</th>
+        </tr>
+      </table>
+      <br>
+    </div>
   </div>
-</div>
 </div>
