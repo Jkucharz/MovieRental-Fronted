@@ -38,6 +38,7 @@ p{
     display: inline-block;
     padding-left:20px;
     padding-top:15px;
+    
 }
 
 .button {
@@ -202,7 +203,7 @@ select{
 .rating > button {
   display: inline-block;
   position: relative;
-  width: 0.8em;
+  width: 1em;
   font-size: 1.7em;
   color: gold;
   background-color: rgb(70, 70, 70);
