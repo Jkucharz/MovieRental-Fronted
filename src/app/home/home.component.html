@@ -37,11 +37,11 @@
       <br>
 
       <p class="rating"> 
-        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 5</b>
-        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 4</b>
-        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 3</b>
-        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 2</b>
-        <button *ngIf="logged">☆</button> <b *ngIf="logged"> 1</b>
+        <button *ngIf="logged" (click)="giveStar(movie.title,5)">☆</button> 
+        <button *ngIf="logged" (click)="giveStar(movie.title,4)">☆</button> 
+        <button *ngIf="logged" (click)="giveStar(movie.title,3)">☆</button> 
+        <button *ngIf="logged" (click)="giveStar(movie.title,2)">☆</button> 
+        <button *ngIf="logged" (click)="giveStar(movie.title,1)">☆</button> 
           <b style="word-spacing: 5px;"> 5/{{movie.rate}} </b> :anecO 
       </p>
       

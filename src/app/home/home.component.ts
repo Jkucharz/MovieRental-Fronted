@@ -26,22 +26,27 @@ export class HomeComponent implements OnInit {
   }
 
   sort() {
-    if(this.sortBy=='title'){
-      if(this.sortType=='desc'){
+    if (this.sortBy == 'title') {
+      if (this.sortType == 'desc') {
         this.movieService.sortMovies('titleDescending');
       }
-      if(this.sortType=='asc'){
+      if (this.sortType == 'asc') {
         this.movieService.sortMovies('titleAscending');
       }
     }
-    if(this.sortBy=='rate'){
-      if(this.sortType=='desc'){
+    if (this.sortBy == 'rate') {
+      if (this.sortType == 'desc') {
         this.movieService.sortMovies('rateDescending');
       }
-      if(this.sortType=='asc'){
+      if (this.sortType == 'asc') {
         this.movieService.sortMovies('rateAscending');
       }
     }
+  }
+
+  giveStar(movie: string, rate: number) {
+    this.movieService.rateMovie(movie,rate);
+    
   }
 
   selectOption(event) {

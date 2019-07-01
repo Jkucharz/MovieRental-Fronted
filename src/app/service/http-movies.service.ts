@@ -22,6 +22,7 @@ export class HttpMoviesService {
   }
 
   sortMovies(sortType: string) {
+    localStorage.setItem('sortType', sortType);
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     const sort: Sort = ({
       sortType: sortType
@@ -31,11 +32,11 @@ export class HttpMoviesService {
     });
   }
 
-  addMovie(title: string, type: Array<Types>,director:string, productionYear:string, description:string){
+  addMovie(title: string, type: Array<Types>, director: string, productionYear: string, description: string) {
     let headers = new HttpHeaders().set('Authorization', 'bearer  ' + localStorage.getItem('token')).set('Content-Type', 'application/json');
     const addMovie: Movie = ({
       title: title,
-      types:type,
+      types: type,
       director: director,
       productionYear: productionYear,
       description: description
@@ -43,11 +44,22 @@ export class HttpMoviesService {
     this.http.post('http://localhost:8080/admin/movie/add', addMovie, { headers: headers }).subscribe(post => {
       this.addError.next('');
       this.router.navigateByUrl('', { skipLocationChange: true }).then(() =>
-      this.router.navigate(["/admin/movies"]));
+        this.router.navigate(["/admin/movies"]));
     },
       error => {
         this.addError.next(error.error.message);
       });
+  }
+
+  rateMovie(title: string, rate: number) {
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    const rateParm: Rate = ({
+      title: title,
+      rate: rate
+    });
+    this.http.post<Movie>('http://localhost:8080/movie/rate', rateParm, { headers: headers }).subscribe(post => {
+      this.sortMovies(localStorage.getItem('sortType'));
+    });
   }
 
   removeMovie(movie: Movie) {
@@ -76,4 +88,9 @@ export interface Types {
 
 export interface Sort {
   sortType: string;
+}
+
+export interface Rate {
+  title?: string;
+  rate?: number;
 }
